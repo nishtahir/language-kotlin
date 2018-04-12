@@ -2,6 +2,8 @@
 
 This repository contains a textmate compatible grammar for the Kotlin language.
 
+![Kotlin language sample](/artwork/kotlin-language-sample.png)
+
 ## Contributing
 
 When contributing to this repository, please first discuss the change you wish 

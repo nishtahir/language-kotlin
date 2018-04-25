@@ -180,6 +180,9 @@ repository:
             -
                 match: \b(constructor|init)\b
                 name: entity.name.function.constructor
+            -
+                match: \b(companion|object)\b
+                name: storage.type.kotlin
     keyword-operator:
         patterns:
             -

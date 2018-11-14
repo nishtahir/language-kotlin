@@ -800,17 +800,6 @@
             <string>((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)</string>
             <key>name</key>
             <string>entity.name.type.class.kotlin</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#keyword-punctuation</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#types</string>
-              </dict>
-            </array>
           </dict>
           <dict>
             <key>match</key>

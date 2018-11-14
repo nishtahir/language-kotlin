@@ -306,9 +306,6 @@ repository:
             -
                 match: '((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)'
                 name: entity.name.type.class.kotlin
-                patterns:
-                    - {include: '#keyword-punctuation'}
-                    - {include: '#types'}
             -
                 match: '\b(?:[a-z]\w*(\.))*[A-Z]+\w*\b'
                 captures:

@@ -148,7 +148,7 @@ repository:
     keyword-literal:
         patterns:
             -
-                match: '(\!in|\!is|as\?)'
+                match: '\b(\!in|\!is|as\?)\b'
                 name: keyword.operator.kotlin
             -
                 match: \b(in|is|as|assert)\b

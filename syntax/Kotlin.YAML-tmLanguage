@@ -148,7 +148,7 @@ repository:
     keyword-literal:
         patterns:
             -
-                match: '(\!in|\!is|as\?)'
+                match: '\b(\!in|\!is|as\?)\b'
                 name: keyword.operator.kotlin
             -
                 match: \b(in|is|as|assert)\b
@@ -264,13 +264,23 @@ repository:
                 name: string.quoted.double.kotlin
                 patterns:
                     - {include: '#string-content'}
+            -
+                begin: ''''
+                beginCaptures:
+                    '0': {name: punctuation.definition.string.begin.kotlin}
+                end: ''''
+                endCaptures:
+                    '0': {name: punctuation.definition.string.end.kotlin}
+                name: string.quoted.single.kotlin
+                patterns:
+                    - {match: \\., name: constant.character.escape.kotlin}
     literal-raw-string:
         patterns:
             -
                 begin: '"""'
                 beginCaptures:
                     '0': {name: punctuation.definition.string.begin.kotlin}
-                end: '"""'
+                end: '"""(?!")'
                 endCaptures:
                     '0': {name: punctuation.definition.string.end.kotlin}
                 name: string.quoted.triple.kotlin

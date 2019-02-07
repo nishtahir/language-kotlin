@@ -435,7 +435,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(\!in|\!is|as\?)</string>
+            <string>\b(\!in|\!is|as\?)\b</string>
             <key>name</key>
             <string>keyword.operator.kotlin</string>
           </dict>
@@ -686,6 +686,39 @@
               </dict>
             </array>
           </dict>
+          <dict>
+            <key>begin</key>
+            <string>'</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.begin.kotlin</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>'</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.end.kotlin</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>string.quoted.single.kotlin</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>match</key>
+                <string>\\.</string>
+                <key>name</key>
+                <string>constant.character.escape.kotlin</string>
+              </dict>
+            </array>
+          </dict>
         </array>
       </dict>
       <key>literal-raw-string</key>
@@ -704,7 +737,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>"""</string>
+            <string>"""(?!")</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>

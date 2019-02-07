@@ -280,7 +280,7 @@ repository:
                 begin: '"""'
                 beginCaptures:
                     '0': {name: punctuation.definition.string.begin.kotlin}
-                end: '"""'
+                end: '"""(?!")'
                 endCaptures:
                     '0': {name: punctuation.definition.string.end.kotlin}
                 name: string.quoted.triple.kotlin

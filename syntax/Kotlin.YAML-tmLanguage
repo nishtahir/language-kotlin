@@ -264,6 +264,16 @@ repository:
                 name: string.quoted.double.kotlin
                 patterns:
                     - {include: '#string-content'}
+            -
+                begin: ''''
+                beginCaptures:
+                    '0': {name: punctuation.definition.string.begin.kotlin}
+                end: ''''
+                endCaptures:
+                    '0': {name: punctuation.definition.string.end.kotlin}
+                name: string.quoted.single.kotlin
+                patterns:
+                    - {match: \\., name: constant.character.escape.kotlin}
     literal-raw-string:
         patterns:
             -

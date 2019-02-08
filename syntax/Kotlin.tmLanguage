@@ -830,7 +830,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)</string>
+            <string>\b((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)?\b</string>
             <key>name</key>
             <string>entity.name.type.class.kotlin</string>
           </dict>

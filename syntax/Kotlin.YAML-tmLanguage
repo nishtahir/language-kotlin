@@ -314,7 +314,7 @@ repository:
                 match: '\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b(\?)?'
                 name: support.class.kotlin
             -
-                match: '((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)'
+                match: '\b((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)?\b'
                 name: entity.name.type.class.kotlin
             -
                 match: '\b(?:[a-z]\w*(\.))*[A-Z]+\w*\b'

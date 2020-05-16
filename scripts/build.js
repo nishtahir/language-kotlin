@@ -8,7 +8,7 @@ const resolvedPath = path.resolve(__dirname, "../Kotlin.YAML-tmLanguage");
 const data = fs.readFileSync(resolvedPath, "utf8");
 const parsedFile = yaml.parse(data);
 
-const destDir = path.resolve(__dirname, "../syntax/");
+const destDir = path.resolve(__dirname, "../dist/");
 if (!fs.existsSync(destDir)) {
   fs.mkdirSync(destDir);
 }
@@ -16,20 +16,20 @@ if (!fs.existsSync(destDir)) {
 console.log("Generating Xml file...");
 const xmlData = plist.build(parsedFile);
 fs.writeFileSync(
-  path.resolve(__dirname, "../syntax/Kotlin.tmLanguage"),
+  path.resolve(__dirname, "../dist/Kotlin.tmLanguage"),
   xmlData
 );
 
 console.log("Generating Json file...");
 let jsonData = json.plain(parsedFile);
 fs.writeFileSync(
-  path.resolve(__dirname, "../syntax/Kotlin.JSON-tmLanguage"),
+  path.resolve(__dirname, "../dist/Kotlin.JSON-tmLanguage"),
   jsonData
 );
 
 console.log("Generating Yaml file...");
 let yamlData = yaml.stringify(parsedFile, 6);
 fs.writeFileSync(
-  path.resolve(__dirname, "../syntax/Kotlin.YAML-tmLanguage"),
+  path.resolve(__dirname, "../dist/Kotlin.YAML-tmLanguage"),
   yamlData
 );

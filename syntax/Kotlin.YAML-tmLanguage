@@ -32,7 +32,7 @@ repository:
     annotations:
         patterns:
             -
-                begin: '(@[^ (]+)(\()?'
+                begin: '((?<!this)@[^ (]+)(\()?'
                 beginCaptures:
                     '1': {name: storage.type.annotation.kotlin}
                     '2': {name: punctuation.definition.annotation-arguments.begin.kotlin}

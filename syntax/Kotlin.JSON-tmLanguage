@@ -47,7 +47,7 @@
     "annotations": {
       "patterns": [
         {
-          "begin": "(@[^ (]+)(\\()?",
+          "begin": "((?<!this)@[^ (]+)(\\()?",
           "beginCaptures": {
             "1": {
               "name": "storage.type.annotation.kotlin"

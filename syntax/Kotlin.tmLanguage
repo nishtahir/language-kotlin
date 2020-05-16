@@ -78,7 +78,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(@[^ (]+)(\()?</string>
+            <string>((?&lt;!this)@[^ (]+)(\()?</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -149,7 +149,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\b(apply|also|let|takeIf|run|takeUnless|with|println)\b\s*(?={|\()</string>
+            <string>\b(apply|also|let|takeIf|run|takeUnless|with|print|println)\b\s*(?={|\()</string>
             <key>captures</key>
             <dict>
               <key>1</key>
@@ -435,7 +435,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\b(\!in|\!is|as\?)\b</string>
+            <string>(\!in|\!is|as\?)</string>
             <key>name</key>
             <string>keyword.operator.kotlin</string>
           </dict>
@@ -471,7 +471,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield|lateinit)\b</string>
+            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield|out|in|lateinit)\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
           </dict>
@@ -686,39 +686,6 @@
               </dict>
             </array>
           </dict>
-          <dict>
-            <key>begin</key>
-            <string>'</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.begin.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>'</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.end.kotlin</string>
-              </dict>
-            </dict>
-            <key>name</key>
-            <string>string.quoted.single.kotlin</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>match</key>
-                <string>\\.</string>
-                <key>name</key>
-                <string>constant.character.escape.kotlin</string>
-              </dict>
-            </array>
-          </dict>
         </array>
       </dict>
       <key>literal-raw-string</key>
@@ -737,7 +704,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>"""(?!")</string>
+            <string>"""</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
@@ -830,9 +797,20 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)</string>
+            <string>\b((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)?\b</string>
             <key>name</key>
             <string>entity.name.type.class.kotlin</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#keyword-punctuation</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#types</string>
+              </dict>
+            </array>
           </dict>
           <dict>
             <key>match</key>
@@ -847,43 +825,6 @@
             </dict>
             <key>name</key>
             <string>entity.name.type.class.kotlin</string>
-          </dict>
-          <dict>
-            <key>begin</key>
-            <string>\&lt;</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.generic.begin.kotlin</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\&gt;</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.generic.end.kotlin</string>
-              </dict>
-            </dict>
-            <key>name</key>
-            <string>meta.generic.kotlin</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>match</key>
-                <string>\b(out|in)\b</string>
-                <key>name</key>
-                <string>storage.modifier.kotlin</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#types</string>
-              </dict>
-            </array>
           </dict>
           <dict>
             <key>begin</key>
@@ -913,6 +854,10 @@
                 <string>#types</string>
               </dict>
             </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
           <dict>
             <key>include</key>

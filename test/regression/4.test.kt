@@ -10,7 +10,8 @@ data class A(
 //    ^^^^^ source.kotlin meta.class.kotlin meta.group.kotlin variable.parameter.function.kotlin
 //         ^ source.kotlin meta.class.kotlin meta.group.kotlin keyword.operator.declaration.kotlin
 //           ^^^ source.kotlin meta.class.kotlin meta.group.kotlin support.class.kotlin
-//                ^^ comment.line.double-slash.kotlin punctuation.definition.comment.kotlin
+//                ^^ punctuation.definition.comment.kotlin comment.line.double-slash.kotlin
+//                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ punctuation.definition.comment.kotlin
 //                ^ -keyword.operator.arithmetic.kotlin
 //                 ^ -keyword.operator.arithmetic.kotlin
 )

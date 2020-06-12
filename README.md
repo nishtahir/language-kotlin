@@ -21,16 +21,19 @@ $ npm install
 
 ## Build
 
-Changes to the grammar should be made in `Kotlin.YAML-tmLanguage`. Once you are satisfied
-with the changes you've made, you will need to generate `xml` and `json` variants for
-distribution. There's a handy build script available to automate this process which will output
-the files to the `dist` directory.
+Changes to the grammar should be made in the grammar sources in the `src` folder. 
+These will be merged at build time and used to produce the final artifact.
+
+Once you are satisfied with changes you've made, you will need to generate 
+`xml` and `json` variants for distribution. 
+There's a handy build script available to automate this process which will output
+the merged sources to the `dist` directory.
 
 ```
 $ npm run build
 ```
 
-## Test
+## Testing
 
 Tests are run using `vscode-tmgrammar-test` against tests cases 
 in `/test` as well as generated snapshots in `/snapshot`.

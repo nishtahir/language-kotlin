@@ -29,24 +29,6 @@ patterns:
     -
         include: '#code'
 repository:
-    annotations:
-        patterns:
-            -
-                begin: '((?<!this)@[^ (]+)(\()?'
-                beginCaptures:
-                    '1': {name: storage.type.annotation.kotlin}
-                    '2': {name: punctuation.definition.annotation-arguments.begin.kotlin}
-                end: (\)|\s|$)
-                endCaptures:
-                    '1': {name: punctuation.definition.annotation-arguments.end.kotlin}
-                name: meta.declaration.annotation.kotlin
-                patterns:
-                    - {captures: {'1': {name: constant.other.key.kotlin}, '2': {name: keyword.operator.assignment.kotlin}}, match: '(\w*)\s*(=)'}
-                    - {include: '#code'}
-                    - {match: ',', name: punctuation.seperator.property.kotlin}
-            -
-                match: '@\w*'
-                name: storage.type.annotation.kotlin
     builtin-functions:
         patterns:
             -
@@ -57,28 +39,7 @@ repository:
                 match: '\b(mutableListOf|listOf|mutableMapOf|mapOf|mutableSetOf|setOf)\b\s*(?={|\()'
                 captures:
                     '1': {name: support.function.kotlin}
-    comments:
-        patterns:
-            -
-                captures:
-                    '0': {name: punctuation.definition.comment.kotlin}
-                match: '/\*\*/'
-                name: comment.block.empty.kotlin
-            -
-                include: '#comments-inline'
-    comments-inline:
-        patterns:
-            -
-                begin: '/\*'
-                captures:
-                    '0': {name: punctuation.definition.comment.kotlin}
-                end: '\*/'
-                name: comment.block.kotlin
-            -
-                captures:
-                    '1': {name: comment.line.double-slash.kotlin}
-                    '2': {name: punctuation.definition.comment.kotlin}
-                match: '\s*((//).*$\n?)'
+                    
     class-literal:
         begin: '(?=\b(?:class|interface|object)\s+\w+)\b'
         end: '(?=\}|$)'
@@ -235,66 +196,11 @@ repository:
     keyword-constant:
         patterns:
             -
-                match: \b(true|false|null|class)\b
+                match: \b(null|class)\b
                 name: constant.language.kotlin
             -
                 match: \b(this|super)\b
                 name: variable.language.kotlin
-            -
-                match: '\b(0(x|X)[0-9A-Fa-f_]*)[L]?\b'
-                name: constant.numeric.hex.kotlin
-            -
-                match: '\b(0(b|B)[0-1_]*)[L]?\b'
-                name: constant.numeric.binary.kotlin
-            -
-                match: '\b([0-9][0-9_]*\.[0-9][0-9_]*[fFL]?)\b'
-                name: constant.numeric.float.kotlin
-            -
-                match: '\b([0-9][0-9_]*[fFL]?)\b'
-                name: constant.numeric.integer.kotlin
-    literal-string:
-        patterns:
-            -
-                begin: '"'
-                beginCaptures:
-                    '0': {name: punctuation.definition.string.begin.kotlin}
-                end: '"'
-                endCaptures:
-                    '0': {name: punctuation.definition.string.end.kotlin}
-                name: string.quoted.double.kotlin
-                patterns:
-                    - {include: '#string-content'}
-    literal-raw-string:
-        patterns:
-            -
-                begin: '"""'
-                beginCaptures:
-                    '0': {name: punctuation.definition.string.begin.kotlin}
-                end: '"""'
-                endCaptures:
-                    '0': {name: punctuation.definition.string.end.kotlin}
-                name: string.quoted.triple.kotlin
-                patterns:
-                    - {include: '#string-content'}
-    string-content:
-        patterns:
-            -
-                name: constant.character.escape.newline.kotlin
-                match: '\\\s*\n'
-            -
-                name: constant.character.escape.kotlin
-                match: '\\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)'
-            -
-                begin: '(\$)(\{)'
-                beginCaptures:
-                    '1': {name: punctuation.definition.keyword.kotlin}
-                    '2': {name: punctuation.section.block.begin.kotlin}
-                end: '\}'
-                endCaptures:
-                    '0': {name: punctuation.section.block.end.kotlin}
-                name: entity.string.template.element.kotlin
-                patterns:
-                    - {include: '#code'}
     types:
         patterns:
             -
@@ -383,6 +289,8 @@ repository:
                 include: '#braces'
             -
                 include: '#brackets'
+            -   
+                include: '#literals'
             -
                 include: '#keyword-literal'
             -
@@ -399,9 +307,5 @@ repository:
                 include: '#literal-functions'
             -
                 include: '#builtin-classes'
-            -
-                include: '#literal-raw-string'
-            -
-                include: '#literal-string'
 scopeName: source.kotlin
 uuid: d9380650-5edc-447d-8dbd-98838c7d0adf

@@ -34,12 +34,13 @@ repository:
             -
                 match: '\b(apply|also|let|takeIf|run|takeUnless|with|print|println)\b\s*(?={|\()'
                 captures:
-                    '1': {name: support.function.kotlin}
+                    '1':
+                        name: support.function.kotlin
             -
                 match: '\b(mutableListOf|listOf|mutableMapOf|mapOf|mutableSetOf|setOf)\b\s*(?={|\()'
                 captures:
-                    '1': {name: support.function.kotlin}
-                    
+                    '1':
+                        name: support.function.kotlin
     class-literal:
         begin: '(?=\b(?:class|interface|object)\s+\w+)\b'
         end: '(?=\}|$)'
@@ -50,21 +51,29 @@ repository:
             -
                 begin: \b(class|object|interface)\b\s+(\w+)
                 beginCaptures:
-                    '1': {name: storage.modifier.kotlin}
-                    '2': {name: entity.name.class.kotlin}
+                    '1':
+                        name: storage.modifier.kotlin
+                    '2':
+                        name: entity.name.class.kotlin
                 end: '(?=\{|\(|:|$)'
                 patterns:
-                    - {include: '#keyword-literal'}
-                    - {include: '#annotations'}
-                    - {include: '#types'}
+                    -
+                        include: '#keyword-literal'
+                    -
+                        include: '#annotations'
+                    -
+                        include: '#types'
             -
                 begin: '(:)\s*(\w+)'
                 beginCaptures:
-                    '1': {name: keyword.operator.declaration.kotlin}
-                    '2': {name: entity.other.inherited-class.kotlin}
+                    '1':
+                        name: keyword.operator.declaration.kotlin
+                    '2':
+                        name: entity.other.inherited-class.kotlin
                 end: '(?={|=|$)'
                 patterns:
-                    - {include: '#types'}
+                    -
+                        include: '#types'
             -
                 include: '#braces'
             -
@@ -76,18 +85,26 @@ repository:
             -
                 begin: \b(fun)\b
                 beginCaptures:
-                    '1': {name: keyword.other.kotlin}
+                    '1':
+                        name: keyword.other.kotlin
                 end: '(?=\()'
                 patterns:
-                    - {captures: {'2': {name: entity.name.function.kotlin}}, match: '([\.<\?>\w]+\.)?(\w+|(`[^`]*`))'}
-                    - {include: '#types'}
+                    -
+                        captures:
+                            '2':
+                                name: entity.name.function.kotlin
+                        match: '([\.<\?>\w]+\.)?(\w+|(`[^`]*`))'
+                    -
+                        include: '#types'
             -
                 begin: '(:)'
                 beginCaptures:
-                    '1': {name: keyword.operator.declaration.kotlin}
+                    '1':
+                        name: keyword.operator.declaration.kotlin
                 end: '(?={|=|$)'
                 patterns:
-                    - {include: '#types'}
+                    -
+                        include: '#types'
             -
                 include: '#parens'
             -
@@ -97,10 +114,12 @@ repository:
             -
                 begin: '(:)'
                 beginCaptures:
-                    '1': {name: keyword.operator.declaration.kotlin}
+                    '1':
+                        name: keyword.operator.declaration.kotlin
                 end: '(?=,|=|\))'
                 patterns:
-                    - {include: '#types'}
+                    -
+                        include: '#types'
             -
                 match: '\w+(?=:)'
                 name: variable.parameter.function.kotlin
@@ -213,22 +232,28 @@ repository:
                 match: '\b((?:[a-zA-Z]\w*\.)*[A-Z]+\w*[a-z]+\w*)(\?)?\b'
                 name: entity.name.type.class.kotlin
                 patterns:
-                    - {include: '#keyword-punctuation'}
-                    - {include: '#types'}
+                    -
+                        include: '#keyword-punctuation'
+                    -
+                        include: '#types'
             -
                 match: '\b(?:[a-z]\w*(\.))*[A-Z]+\w*\b'
                 captures:
-                    '1': {name: keyword.operator.dereference.kotlin}
+                    '1':
+                        name: keyword.operator.dereference.kotlin
                 name: entity.name.type.class.kotlin
             -
                 begin: \(
                 beginCaptures:
-                    '0': {name: punctuation.section.group.begin.kotlin}
+                    '0':
+                        name: punctuation.section.group.begin.kotlin
                 end: \)
                 endCaptures:
-                    '0': {name: punctuation.section.group.end.kotlin}
+                    '0':
+                        name: punctuation.section.group.end.kotlin
                 patterns:
-                    - {include: '#types'}
+                    -
+                        include: '#types'
             -
                 include: '#comments'
             -
@@ -240,39 +265,50 @@ repository:
             -
                 begin: \(
                 beginCaptures:
-                    '0': {name: punctuation.section.group.begin.kotlin}
+                    '0':
+                        name: punctuation.section.group.begin.kotlin
                 end: \)
                 endCaptures:
-                    '0': {name: punctuation.section.group.end.kotlin}
+                    '0':
+                        name: punctuation.section.group.end.kotlin
                 name: meta.group.kotlin
                 patterns:
-                    - {include: '#keyword-punctuation'}
-                    - {include: '#parameters'}
-                    - {include: '#code'}
+                    -
+                        include: '#keyword-punctuation'
+                    -
+                        include: '#parameters'
+                    -
+                        include: '#code'
     braces:
         patterns:
             -
                 begin: '\{'
                 beginCaptures:
-                    '0': {name: punctuation.section.group.begin.kotlin}
+                    '0':
+                        name: punctuation.section.group.begin.kotlin
                 end: '\}'
                 endCaptures:
-                    '0': {name: punctuation.section.group.end.kotlin}
+                    '0':
+                        name: punctuation.section.group.end.kotlin
                 name: meta.block.kotlin
                 patterns:
-                    - {include: '#code'}
+                    -
+                        include: '#code'
     brackets:
         patterns:
             -
                 begin: '\['
                 beginCaptures:
-                    '0': {name: punctuation.section.brackets.begin.kotlin}
+                    '0':
+                        name: punctuation.section.brackets.begin.kotlin
                 end: '\]'
                 endCaptures:
-                    '0': {name: punctuation.section.brackets.end.kotlin}
+                    '0':
+                        name: punctuation.section.brackets.end.kotlin
                 name: meta.brackets.kotlin
                 patterns:
-                    - {include: '#code'}
+                    -
+                        include: '#code'
     code:
         patterns:
             -
@@ -289,7 +325,7 @@ repository:
                 include: '#braces'
             -
                 include: '#brackets'
-            -   
+            -
                 include: '#literals'
             -
                 include: '#keyword-literal'

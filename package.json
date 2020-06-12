@@ -14,6 +14,7 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
+    "format": "node scripts/format.js",
     "snapshot": "npx vscode-tmgrammar-snap -s source.kotlin -g dist/Kotlin.tmLanguage -t \"snapshots/**/*.kt\"",
     "grammar-test": "npx vscode-tmgrammar-test -s source.kotlin -g dist/Kotlin.tmLanguage -t \"test/**/*.test.kt\"",
     "test": "npm run grammar-test && npm run snapshot"

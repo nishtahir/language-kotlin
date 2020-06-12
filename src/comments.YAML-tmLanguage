@@ -6,25 +6,31 @@ repository:
             -
                 begin: '/\*'
                 beginCaptures:
-                    '0': {name: punctuation.definition.comment.begin.kotlin}
+                    '0':
+                        name: punctuation.definition.comment.begin.kotlin
                 end: '\*/'
                 endCaptures:
-                    '0': {name: punctuation.definition.comment.end.kotlin}
+                    '0':
+                        name: punctuation.definition.comment.end.kotlin
                 name: comment.block.kotlin
                 patterns:
-                    - {include: '#nested'}
+                    -
+                        include: '#nested'
         repository:
             inline:
                 patterns:
                     -
                         match: '(//).*$\n?'
                         captures:
-                            '0': {name: punctuation.definition.comment.kotlin}
-                            '1': {name: comment.line.double-slash.kotlin}
+                            '0':
+                                name: punctuation.definition.comment.kotlin
+                            '1':
+                                name: comment.line.double-slash.kotlin
             nested:
                 patterns:
                     -
                         begin: '/\*'
                         end: '\*/'
                         patterns:
-                            - {include: '#nested'}
+                            -
+                                include: '#nested'

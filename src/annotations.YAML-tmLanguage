@@ -1,18 +1,26 @@
 repository:
-  annotations:
-    patterns:
-      - comment: "Use-site annotation"
-        match: '@(?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*?[a-zA-Z_]\w*'
-        name: meta.annotation.kotlin
-      - begin: '@[a-zA-Z_]\w*\s*(\()'
-        beginCaptures:
-          "1": { name: punctuation.definition.arguments.begin.kotlin }
-        end: '\)'
-        endCaptures:
-          "0": { name: punctuation.definition.arguments.end.kotlin }
-        name: meta.annotation.kotlin
+    annotations:
         patterns:
-          - include: "#code"
-          - { match: ",", name: punctuation.seperator.property.kotlin }
-      - match: '@[a-zA-Z_]\w*'
-        name: meta.annotation.kotlin
+            -
+                comment: 'Use-site annotation'
+                match: '@(?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*?[a-zA-Z_]\w*'
+                name: meta.annotation.kotlin
+            -
+                begin: '@[a-zA-Z_]\w*\s*(\()'
+                beginCaptures:
+                    '1':
+                        name: punctuation.definition.arguments.begin.kotlin
+                end: \)
+                endCaptures:
+                    '0':
+                        name: punctuation.definition.arguments.end.kotlin
+                name: meta.annotation.kotlin
+                patterns:
+                    -
+                        include: '#code'
+                    -
+                        match: ','
+                        name: punctuation.seperator.property.kotlin
+            -
+                match: '@[a-zA-Z_]\w*'
+                name: meta.annotation.kotlin

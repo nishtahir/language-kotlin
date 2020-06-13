@@ -37,7 +37,7 @@ repository:
                             '1':
                                 name: punctuation.definition.parameters.end.kotlin
                         name: meta.parameters.kotlin
-                        patterns: 
+                        patterns:
                             -
                                 include: '#comments'
                             -

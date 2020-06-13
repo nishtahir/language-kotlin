@@ -2,21 +2,23 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require("yamljs");
 
-var sourceFiles = fs.readdirSync(path.resolve(__dirname, "../", "src/"));
+const sourceDirPath = path.resolve(__dirname, "../", "src/");
+const sourceFiles = fs.readdirSync(sourceDirPath);
+
 sourceFiles.forEach((file) => {
-  const resolvedPath = path.resolve(__dirname, "../", "src/", file);
 
-  console.log("Formatting " + resolvedPath);
+  const filePath = path.resolve(sourceDirPath, file);
+  console.log("Formatting " + filePath);
 
-  const source = fs.readFileSync(resolvedPath, "utf8");
-  if(source.trim().length === 0) {
+  const source = fs.readFileSync(filePath, "utf8");
+  if (source.trim().length === 0) {
     return; // skip empty files
   }
 
   const parsedFile = yaml.parse(source);
-  let yamlData = yaml.stringify(parsedFile, {
+  const yamlData = yaml.stringify(parsedFile, {
     indent: 2,
     indentSeq: true,
   });
-  fs.writeFileSync(resolvedPath, yamlData);
+  fs.writeFileSync(filePath, yamlData);
 });

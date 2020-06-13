@@ -1,0 +1,15 @@
+repository:
+    imports:
+        patterns:
+            -
+                match: '^\s*(import)\s+([^ $.]+(?:\.(?:[`][^$`]+[`]|[^` $.]+))+)(?:\s+(as)\s+([`][^$`]+[`]|[^` $.]+))?'
+                captures:
+                    '1':
+                        name: keyword.other.import.kotlin
+                    '2':
+                        name: storage.modifier.import.kotlin
+                    '3':
+                        name: keyword.other.kotlin
+                    '4':
+                        name: entity.name.type
+                name: meta.import.kotlin

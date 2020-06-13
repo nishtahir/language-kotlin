@@ -1,0 +1,10 @@
+repository:
+    package:
+        patterns:
+            -
+                match: '^\s*(package)\b(?:\s*([^ ;$]+)\s*)?'
+                captures:
+                    '1':
+                        name: keyword.other.kotlin
+                    '2':
+                        name: entity.name.package.kotlin

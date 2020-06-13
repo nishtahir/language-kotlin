@@ -10,9 +10,20 @@ var sourceFiles = fs.readdirSync(path.resolve(__dirname, "../", "src/"));
 let data = {};
 sourceFiles.forEach((file) => {
   const resolvedPath = path.resolve(__dirname, "../", "src/", file);
-  const source = fs.readFileSync(resolvedPath, "utf8");
-  const parsedFile = yaml.parse(source);
-  data = deepmerge(data, parsedFile);
+  try {
+    const source = fs.readFileSync(resolvedPath, "utf8");
+    if(source.trim().length === 0) {
+      return; // skip empty files
+    }
+  
+    const parsedFile = yaml.parse(source);
+    data = deepmerge(data, parsedFile);
+  } catch (e) {
+    console.log("An error occured while parsing file...");
+    console.log(resolvedPath);
+    console.log(e);
+    process.exit(1);
+  }
 });
 
 const destDir = path.resolve(__dirname, "../dist/");

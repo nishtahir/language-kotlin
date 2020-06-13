@@ -9,8 +9,11 @@ sourceFiles.forEach((file) => {
   console.log("Formatting " + resolvedPath);
 
   const source = fs.readFileSync(resolvedPath, "utf8");
-  const parsedFile = yaml.parse(source);
+  if(source.trim().length === 0) {
+    return; // skip empty files
+  }
 
+  const parsedFile = yaml.parse(source);
   let yamlData = yaml.stringify(parsedFile, {
     indent: 2,
     indentSeq: true,

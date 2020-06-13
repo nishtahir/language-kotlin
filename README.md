@@ -11,9 +11,14 @@ Develop
 
 # Contributing
 
+## Requirements
+
+* NodeJS
+
 ## Setup
 
-To generate build artifacts you will need to install dependencies
+This project is build using a couple of handy node scripts. You will need to 
+install the project dependencies to begin
 
 ```
 $ npm install
@@ -31,6 +36,12 @@ the merged sources to the `dist` directory.
 
 ```
 $ npm run build
+```
+
+You can format your sources using.
+
+```
+$ npm run format
 ```
 
 ## Testing

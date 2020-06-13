@@ -1,0 +1,39 @@
+repository:
+    keywords:
+        patterns:
+            -
+                match: '(\!in|\!is|as\?)'
+                name: keyword.operator.kotlin
+            -
+                match: \b(in|is|as|assert)\b
+                name: keyword.operator.kotlin
+            -
+                match: \b(const)\b
+                name: storage.modifier.kotlin
+            -
+                match: \b(val|var)\b
+                name: storage.type.kotlin
+            -
+                match: \b(\_)\b
+                name: punctuation.definition.variable.kotlin
+            -
+                match: \b(data|inline|tailrec|operator|infix|typealias|reified)\b
+                name: storage.type.kotlin
+            -
+                match: \b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield|out|in|lateinit)\b
+                name: storage.modifier.kotlin
+            -
+                match: \b(try|catch|finally|throw)\b
+                name: keyword.control.catch-exception.kotlin
+            -
+                match: \b(if|else|when)\b
+                name: keyword.control.conditional.kotlin
+            -
+                match: \b(while|for|do|return|break|continue)\b
+                name: keyword.control.kotlin
+            -
+                match: \b(constructor|init)\b
+                name: entity.name.function.constructor
+            -
+                match: \b(companion|object)\b
+                name: storage.type.kotlin

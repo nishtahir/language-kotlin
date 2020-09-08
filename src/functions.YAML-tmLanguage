@@ -64,6 +64,8 @@ repository:
             function-parameter-list:
                 patterns:
                     -
+                        include: '#comments'
+                    -
                         include: '#annotations'
                     -
                         include: '#keywords'

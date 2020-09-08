@@ -73,6 +73,7 @@ repository:
         repository:
             function-parameter-list:
                 patterns:
+                    - {include: '#comments'}
                     - {include: '#annotations'}
                     - {include: '#keywords'}
                     - {match: '(\w+)\s*(:)', captures: {'1': {name: variable.parameter.function.kotlin}, '2': {name: keyword.operator.declaration.kotlin}}}

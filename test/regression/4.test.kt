@@ -1,19 +1,20 @@
 // SYNTAX TEST "source.kotlin" "Comments after field"
 
 data class A(
-//<---- source.kotlin storage.type.kotlin
-//   ^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
-//         ^ source.kotlin meta.class.kotlin entity.name.class.kotlin
-//          ^ source.kotlin meta.class.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
+//<---- storage.type.kotlin
+//   ^^^^^ meta.class.kotlin storage.modifier.kotlin
+//         ^ meta.class.kotlin entity.name.class.kotlin
+//          ^ meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
   val field: Int  // This is a comment, when is not a keyword
-//^^^ source.kotlin meta.class.kotlin meta.group.kotlin storage.type.kotlin
-//    ^^^^^ source.kotlin meta.class.kotlin meta.group.kotlin variable.parameter.function.kotlin
-//         ^ source.kotlin meta.class.kotlin meta.group.kotlin keyword.operator.declaration.kotlin
-//           ^^^ source.kotlin meta.class.kotlin meta.group.kotlin support.class.kotlin
-//                ^^ comment.line.double-slash.kotlin punctuation.definition.comment.kotlin
+//^^^ meta.class.kotlin meta.parameters.kotlin storage.type.kotlin
+//    ^^^^^ meta.class.kotlin meta.parameters.kotlin variable.parameter.function.kotlin
+//         ^ meta.class.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
+//           ^^^ meta.class.kotlin meta.parameters.kotlin support.class.kotlin
+//                ^^ punctuation.definition.comment.kotlin comment.line.double-slash.kotlin
+//                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ punctuation.definition.comment.kotlin
 //                ^ -keyword.operator.arithmetic.kotlin
 //                 ^ -keyword.operator.arithmetic.kotlin
 )
-//<- source.kotlin meta.class.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
+//<- meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 
 // This is a comment, when is not a keyword

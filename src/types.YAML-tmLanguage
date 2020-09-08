@@ -1,0 +1,36 @@
+repository:
+    types:
+        patterns:
+            -
+                include: '#built-in-types'
+            -
+                include: '#class-ident'
+            -
+                match: '(?<![/=\-+!*%<>&|\^~.])(->)(?![/=\-+!*%<>&|\^~.])'
+                captures:
+                    '1':
+                        name: keyword.operator.type.function.kotlin
+            -
+                match: '\?(?!\.)'
+                name: keyword.operator.type.nullable.kotlin
+            -
+                begin: \(
+                beginCaptures:
+                    '0':
+                        name: punctuation.section.group.begin.kotlin
+                end: \)
+                endCaptures:
+                    '0':
+                        name: punctuation.section.group.end.kotlin
+                patterns:
+                    -
+                        include: '#types'
+        repository:
+            built-in-types:
+                patterns:
+                    -
+                        match: '\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|List|Map|Set|dynamic)\b(\?)?'
+                        name: support.class.kotlin
+                    -
+                        match: '\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b(\?)?'
+                        name: support.class.kotlin

@@ -1,0 +1,78 @@
+repository:
+    object-literal:
+        patterns:
+            -
+                begin: '(?=\b(?:object)\b((\s*:\s*)|\s+)\w+)'
+                end: '(?=\}|$)'
+                name: meta.class.kotlin
+                patterns:
+                    -
+                        include: '#annotation'
+                    -
+                        begin: '\b(object)\b\s*(:)\s*(\w+)'
+                        beginCaptures:
+                            '1':
+                                name: storage.modifier.kotlin
+                            '2':
+                                name: keyword.operator.declaration.kotlin
+                            '3':
+                                name: entity.name.class.kotlin
+                        end: '(?=\(|\{|$)'
+                        patterns:
+                            -
+                                include: '#comments'
+                            -
+                                include: '#annotations'
+                            -
+                                include: '#types'
+                    -
+                        begin: (\()
+                        beginCaptures:
+                            '0':
+                                name: punctuation.section.group.begin.kotlin
+                            '1':
+                                name: punctuation.definition.parameters.begin.kotlin
+                        end: (\))
+                        endCaptures:
+                            '0':
+                                name: punctuation.section.group.end.kotlin
+                            '1':
+                                name: punctuation.definition.parameters.end.kotlin
+                        name: meta.parameters.kotlin
+                        patterns:
+                            -
+                                include: '#comments'
+                            -
+                                include: '#class-parameter-list'
+                    -
+                        begin: '\{'
+                        beginCaptures:
+                            '0':
+                                name: punctuation.section.group.begin.kotlin
+                        end: '\}'
+                        endCaptures:
+                            '0':
+                                name: punctuation.section.group.end.kotlin
+                        name: meta.block.kotlin
+                        patterns:
+                            -
+                                include: '#code'
+        repository:
+            class-parameter-list:
+                patterns:
+                    -
+                        include: '#annotations'
+                    -
+                        include: '#keywords'
+                    -
+                        match: '(\w+)\s*(:)'
+                        captures:
+                            '1':
+                                name: variable.parameter.function.kotlin
+                            '2':
+                                name: keyword.operator.declaration.kotlin
+                    -
+                        match: ','
+                        name: punctuation.seperator.kotlin
+                    -
+                        include: '#types'

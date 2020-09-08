@@ -1,0 +1,168 @@
+fileTypes:
+    - kt
+    - kts
+foldingStartMarker: '(\{\s*(//.*)?$|^\s*// \{\{\{)'
+foldingStopMarker: '^\s*(\}|// \}\}\}$)'
+name: Kotlin
+patterns:
+    -
+        include: '#comments'
+    -
+        include: '#package'
+    -
+        include: '#imports'
+    -
+        include: '#code'
+repository:
+    builtin-functions:
+        patterns:
+            -
+                match: '\b(apply|also|let|takeIf|run|takeUnless|with|print|println)\b\s*(?={|\()'
+                captures:
+                    '1':
+                        name: support.function.kotlin
+            -
+                match: '\b(mutableListOf|listOf|mutableMapOf|mapOf|mutableSetOf|setOf)\b\s*(?={|\()'
+                captures:
+                    '1':
+                        name: support.function.kotlin
+    keyword-operator:
+        patterns:
+            -
+                match: \b(and|or|not|inv)\b
+                name: keyword.operator.bitwise.kotlin
+            -
+                match: (==|!=|===|!==|<=|>=|<|>)
+                name: keyword.operator.comparison.kotlin
+            -
+                match: (=)
+                name: keyword.operator.assignment.kotlin
+            -
+                match: '(:(?!:))'
+                name: keyword.operator.declaration.kotlin
+            -
+                match: '(\?:)'
+                name: keyword.operator.elvis.kotlin
+            -
+                match: (\-\-|\+\+)
+                name: keyword.operator.increment-decrement.kotlin
+            -
+                match: '(\-|\+|\*|\/|%)'
+                name: keyword.operator.arithmetic.kotlin
+            -
+                match: '(\+\=|\-\=|\*\=|\/\=)'
+                name: keyword.operator.arithmetic.assign.kotlin
+            -
+                match: '(\!|\&\&|\|\|)'
+                name: keyword.operator.logical.kotlin
+            -
+                match: (\.\.)
+                name: keyword.operator.range.kotlin
+    keyword-punctuation:
+        patterns:
+            -
+                match: '::'
+                name: punctuation.accessor.reference.kotlin
+            -
+                match: '\?\.'
+                name: punctuation.accessor.dot.safe.kotlin
+            -
+                match: '(?<!\?)\.'
+                name: punctuation.accessor.dot.kotlin
+            -
+                match: '\,'
+                name: punctuation.seperator.kotlin
+            -
+                match: \;
+                name: punctuation.terminator.kotlin
+    keyword-constant:
+        patterns:
+            -
+                match: \b(class)\b
+                name: constant.language.kotlin
+            -
+                match: \b(this|super)\b
+                name: variable.language.kotlin
+    parens:
+        patterns:
+            -
+                begin: \(
+                beginCaptures:
+                    '0':
+                        name: punctuation.section.group.begin.kotlin
+                end: \)
+                endCaptures:
+                    '0':
+                        name: punctuation.section.group.end.kotlin
+                name: meta.group.kotlin
+                patterns:
+                    -
+                        include: '#keyword-punctuation'
+                    -
+                        include: '#parameters'
+                    -
+                        include: '#code'
+    braces:
+        patterns:
+            -
+                begin: '\{'
+                beginCaptures:
+                    '0':
+                        name: punctuation.section.group.begin.kotlin
+                end: '\}'
+                endCaptures:
+                    '0':
+                        name: punctuation.section.group.end.kotlin
+                name: meta.block.kotlin
+                patterns:
+                    -
+                        include: '#code'
+    brackets:
+        patterns:
+            -
+                begin: '\['
+                beginCaptures:
+                    '0':
+                        name: punctuation.section.brackets.begin.kotlin
+                end: '\]'
+                endCaptures:
+                    '0':
+                        name: punctuation.section.brackets.end.kotlin
+                name: meta.brackets.kotlin
+                patterns:
+                    -
+                        include: '#code'
+    code:
+        patterns:
+            -
+                include: '#comments'
+            -
+                include: '#comments-inline'
+            -
+                include: '#annotations'
+            -
+                include: '#parens'
+            -
+                include: '#braces'
+            -
+                include: '#brackets'
+            -
+                include: '#class-literal'
+            -
+                include: '#literal-functions'
+            -
+                include: '#literals'
+            -
+                include: '#keywords'
+            -
+                include: '#types'
+            -
+                include: '#keyword-operator'
+            -
+                include: '#keyword-constant'
+            -
+                include: '#keyword-punctuation'
+            -
+                include: '#builtin-functions'
+scopeName: source.kotlin
+uuid: d9380650-5edc-447d-8dbd-98838c7d0adf

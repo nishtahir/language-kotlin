@@ -1,4 +1,4 @@
-# SYNTAX TEST "source.kotlin" "Comments"
+# SYNTAX TEST "source.kotlin" "Kotlin nested multi-line comments syntax-highlighting"
 
  /*
 #^^ source.kotlin comment.block.kotlin punctuation.definition.comment.begin.kotlin

@@ -67,7 +67,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?=\b(?:class|interface|object)\s+\w+)\b</string>
+            <string>(?=\b(?:class|interface)\s+\w+)\b</string>
             <key>end</key>
             <string>(?=\}|$)</string>
             <key>name</key>
@@ -80,7 +80,7 @@
               </dict>
               <dict>
                 <key>begin</key>
-                <string>\b(class|object|interface)\b\s+(\w+)</string>
+                <string>\b(class|interface)\b\s+(\w+)</string>
                 <key>beginCaptures</key>
                 <dict>
                   <key>1</key>
@@ -1166,6 +1166,186 @@
                 <string>\b(null)\b</string>
                 <key>name</key>
                 <string>constant.language.null.kotlin</string>
+              </dict>
+            </array>
+          </dict>
+        </dict>
+      </dict>
+      <key>object-literal</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(?=\b(?:object)\b((\s*:\s*)|\s+)\w+)</string>
+            <key>end</key>
+            <string>(?=\}|$)</string>
+            <key>name</key>
+            <string>meta.class.kotlin</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#annotation</string>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>\b(object)\b\s*(:)\s*(\w+)</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>1</key>
+                  <dict>
+                    <key>name</key>
+                    <string>storage.modifier.kotlin</string>
+                  </dict>
+                  <key>2</key>
+                  <dict>
+                    <key>name</key>
+                    <string>keyword.operator.declaration.kotlin</string>
+                  </dict>
+                  <key>3</key>
+                  <dict>
+                    <key>name</key>
+                    <string>entity.name.class.kotlin</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(?=\(|\{|$)</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#comments</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#annotations</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#types</string>
+                  </dict>
+                </array>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>(\()</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.section.group.begin.kotlin</string>
+                  </dict>
+                  <key>1</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.parameters.begin.kotlin</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(\))</string>
+                <key>endCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.section.group.end.kotlin</string>
+                  </dict>
+                  <key>1</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.parameters.end.kotlin</string>
+                  </dict>
+                </dict>
+                <key>name</key>
+                <string>meta.parameters.kotlin</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#comments</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#class-parameter-list</string>
+                  </dict>
+                </array>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>\{</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.section.group.begin.kotlin</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>\}</string>
+                <key>endCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.section.group.end.kotlin</string>
+                  </dict>
+                </dict>
+                <key>name</key>
+                <string>meta.block.kotlin</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#code</string>
+                  </dict>
+                </array>
+              </dict>
+            </array>
+          </dict>
+        </array>
+        <key>repository</key>
+        <dict>
+          <key>class-parameter-list</key>
+          <dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#annotations</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#keywords</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>(\w+)\s*(:)</string>
+                <key>captures</key>
+                <dict>
+                  <key>1</key>
+                  <dict>
+                    <key>name</key>
+                    <string>variable.parameter.function.kotlin</string>
+                  </dict>
+                  <key>2</key>
+                  <dict>
+                    <key>name</key>
+                    <string>keyword.operator.declaration.kotlin</string>
+                  </dict>
+                </dict>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>,</string>
+                <key>name</key>
+                <string>punctuation.seperator.kotlin</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#types</string>
               </dict>
             </array>
           </dict>

@@ -20,10 +20,10 @@
     "test": "npm run grammar-test && npm run snapshot"
   },
   "devDependencies": {
-    "vscode-tmgrammar-test": "0.0.10",
+    "deepmerge": "^4.2.2",
     "format-json": "^1.0.3",
     "plist": "^3.0.1",
-    "yamljs": "^0.3.0",
-    "deepmerge": "^4.2.2"
+    "vscode-tmgrammar-test": "0.0.10",
+    "yamljs": "^0.3.0"
   }
 }

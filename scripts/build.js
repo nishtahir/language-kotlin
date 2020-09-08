@@ -30,9 +30,6 @@ if (!fs.existsSync(destDir)) {
   fs.mkdirSync(destDir);
 }
 
-console.log("Generating Xml file...");
-fs.writeFileSync(path.resolve(destDir, "Kotlin.tmLanguage"), plist.build(data));
-
 console.log("Generating Json file...");
 fs.writeFileSync(
   path.resolve(destDir, "Kotlin.JSON-tmLanguage"),
@@ -44,3 +41,7 @@ fs.writeFileSync(
   path.resolve(destDir, "Kotlin.YAML-tmLanguage"),
   yaml.stringify(data, 6)
 );
+
+console.log("Generating Xml file...");
+const xmlData = plist.build(data);
+fs.writeFileSync(path.resolve(destDir, "Kotlin.tmLanguage"), xmlData);

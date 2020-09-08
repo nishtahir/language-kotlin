@@ -151,4 +151,8 @@ data class Response(@SerializedName("param1") val param1: String,
                     @SerializedName("param3") val param3: String) {
 }
 
+object DefaultListener : MouseAdapter() {
+    override fun mouseClicked(e: MouseEvent) { }
 
+    override fun mouseEntered(e: MouseEvent) { }
+}

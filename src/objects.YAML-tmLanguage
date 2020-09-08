@@ -1,21 +1,23 @@
 repository:
-    class-literal:
+    object-literal:
         patterns:
             -
-                begin: '(?=\b(?:class|interface)\s+\w+)\b'
+                begin: '(?=\b(?:object)\b((\s*:\s*)|\s+)\w+)'
                 end: '(?=\}|$)'
                 name: meta.class.kotlin
                 patterns:
                     -
-                        include: '#keyword'
+                        include: '#annotation'
                     -
-                        begin: \b(class|interface)\b\s+(\w+)
+                        begin: '\b(object)\b\s*(:)\s*(\w+)'
                         beginCaptures:
                             '1':
                                 name: storage.modifier.kotlin
                             '2':
+                                name: keyword.operator.declaration.kotlin
+                            '3':
                                 name: entity.name.class.kotlin
-                        end: '(?=\(|\{|:|$)'
+                        end: '(?=\(|\{|$)'
                         patterns:
                             -
                                 include: '#comments'

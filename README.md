@@ -5,10 +5,6 @@ A textmate compatible grammar for the Kotlin language.
 Master  
 ![Node.js CI](https://github.com/nishtahir/language-kotlin/workflows/Node.js%20CI/badge.svg?branch=master)
 
-Develop  
-![Node.js CI](https://github.com/nishtahir/language-kotlin/workflows/Node.js%20CI/badge.svg?branch=develop)
-
-
 # Contributing
 
 ## Requirements
@@ -17,8 +13,8 @@ Develop
 
 ## Setup
 
-This project is build using a couple of handy node scripts. You will need to 
-install the project dependencies to begin
+This project is built using a couple of handy node scripts. Begin by installing the
+required dependencies.
 
 ```
 $ npm install
@@ -26,19 +22,22 @@ $ npm install
 
 ## Build
 
-Changes to the grammar should be made in the grammar sources in the `src` folder. 
-These will be merged at build time and used to produce the final artifact.
+Changes to the grammar should be made in the `src` folder. These are merged at build 
+time and used to produce the final artifact.
 
-Once you are satisfied with changes you've made, you will need to generate 
+Once you are satisfied with your changes, you will need to generate 
 `xml` and `json` variants for distribution. 
-There's a handy build script available to automate this process which will output
-the merged sources to the `dist` directory.
+There's a handy build script available to automate this process.
 
 ```
 $ npm run build
 ```
 
-You can format your sources using.
+This will outputs the merged sources to the `dist` directory. At this point
+it's highly recommended that you test your changes using [GitHub Lightshow](https://github-lightshow.herokuapp.com/). There's some manual work involved in doing this however this is the closest
+representation to what it would look like when it's deployed available right now.
+
+You can format your sources using the code formatting script.
 
 ```
 $ npm run format
@@ -46,16 +45,25 @@ $ npm run format
 
 ## Testing
 
-Tests are run using `vscode-tmgrammar-test` against tests cases 
-in `/test` as well as generated snapshots in `/snapshot`.
-
 > All changes to the grammar must be accompanied by tests.
+
+Tests are run using [`vscode-tmgrammar-test`](https://github.com/PanAeon/vscode-tmgrammar-test). 
+Test cases and regression tests are available in the `/test` folder.
+
+Generated snapshots are available in the `/snapshots` folder and should be updated with changes
+to the grammar.
 
 The test suite can be run using `npm`
 
 ```
 $ npm test
 ```
+
+# Useful resources
+
+* [GitHub Lightshow](https://github-lightshow.herokuapp.com/) - Useful for testing Grammar sources against Code to inspect the highlighting behavior
+* [Sublime Text scope naming reference](https://www.sublimetext.com/docs/3/scope_naming.html) - 
+
 
 # Code of Conduct
 

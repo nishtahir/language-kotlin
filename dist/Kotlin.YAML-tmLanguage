@@ -350,8 +350,8 @@ repository:
         repository:
             built-in-types:
                 patterns:
-                    - {match: '\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|List|Map|Set|dynamic)\b(\?)?', name: support.class.kotlin}
-                    - {match: '\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b(\?)?', name: support.class.kotlin}
+                    - {match: '\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|UByte|UShort|UInt|ULong|Array|List|Map|Set|dynamic)\b(\?)?', name: support.class.kotlin}
+                    - {match: '\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray|UByteArray|UShortArray|UIntArray|ULongArray)\b(\?)?', name: support.class.kotlin}
 fileTypes:
     - kt
     - kts

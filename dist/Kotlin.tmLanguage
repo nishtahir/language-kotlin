@@ -1018,13 +1018,13 @@
             <array>
               <dict>
                 <key>match</key>
-                <string>\b(0(x|X)[0-9A-Fa-f_]*)[L]?\b</string>
+                <string>\b(0(x|X)[0-9A-Fa-f_]*)([LuU]|[uU]L)?\b</string>
                 <key>name</key>
                 <string>constant.numeric.hex.kotlin</string>
               </dict>
               <dict>
                 <key>match</key>
-                <string>\b(0(b|B)[0-1_]*)[L]?\b</string>
+                <string>\b(0(b|B)[0-1_]*)([LuU]|[uU]L)?\b</string>
                 <key>name</key>
                 <string>constant.numeric.binary.kotlin</string>
               </dict>
@@ -1036,7 +1036,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>\b([0-9][0-9_]*[fFL]?)\b</string>
+                <string>\b([0-9][0-9_]*([fFLuU]|[uU]L)?)\b</string>
                 <key>name</key>
                 <string>constant.numeric.integer.kotlin</string>
               </dict>
@@ -1446,13 +1446,13 @@
             <array>
               <dict>
                 <key>match</key>
-                <string>\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|Array|List|Map|Set|dynamic)\b(\?)?</string>
+                <string>\b(Nothing|Any|Unit|String|CharSequence|Int|Boolean|Char|Long|Double|Float|Short|Byte|UByte|UShort|UInt|ULong|Array|List|Map|Set|dynamic)\b(\?)?</string>
                 <key>name</key>
                 <string>support.class.kotlin</string>
               </dict>
               <dict>
                 <key>match</key>
-                <string>\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray)\b(\?)?</string>
+                <string>\b(IntArray|BooleanArray|CharArray|LongArray|DoubleArray|FloatArray|ShortArray|ByteArray|UByteArray|UShortArray|UIntArray|ULongArray)\b(\?)?</string>
                 <key>name</key>
                 <string>support.class.kotlin</string>
               </dict>

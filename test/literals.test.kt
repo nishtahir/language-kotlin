@@ -106,3 +106,56 @@
 //         ^ source.kotlin keyword.operator.assignment.kotlin
 //          ^ source.kotlin
 //           ^^^^ source.kotlin constant.language.null.kotlin
+
+  val ubyte: UByte = 1u
+//^^^ source.kotlin storage.type.kotlin
+//   ^^^^^^ source.kotlin
+//         ^ source.kotlin keyword.operator.declaration.kotlin
+//           ^^^^^ source.kotlin support.class.kotlin
+//                 ^ source.kotlin keyword.operator.assignment.kotlin
+//                   ^^ constant.numeric.integer.kotlin
+
+  val ushort: UShort = 1u
+//^^^ source.kotlin storage.type.kotlin
+//   ^^^^^^^ source.kotlin
+//          ^ source.kotlin keyword.operator.declaration.kotlin
+//            ^^^^^^ source.kotlin support.class.kotlin
+//                   ^ source.kotlin keyword.operator.assignment.kotlin
+//                     ^^ constant.numeric.integer.kotlin
+
+  val uint: UInt = 1u
+//^^^ source.kotlin storage.type.kotlin
+//   ^^^^^ source.kotlin
+//        ^ source.kotlin keyword.operator.declaration.kotlin
+//          ^^^^ source.kotlin support.class.kotlin
+//               ^ source.kotlin keyword.operator.assignment.kotlin
+//                 ^^ constant.numeric.integer.kotlin
+
+  val ulong: ULong = 42u
+//^^^ source.kotlin storage.type.kotlin
+//   ^^^^^^ source.kotlin
+//         ^ source.kotlin keyword.operator.declaration.kotlin
+//           ^^^^^ source.kotlin support.class.kotlin
+//                 ^ source.kotlin keyword.operator.assignment.kotlin
+//                   ^^ constant.numeric.integer.kotlin
+
+  val hexUlong = 0xFFFF_FFFF_FFFFu
+//^^^ source.kotlin storage.type.kotlin
+//   ^^^^^^^^^ source.kotlin
+//             ^ source.kotlin keyword.operator.assignment.kotlin
+//               ^^^^^^^^^^^^^^^^^ constant.numeric.hex.kotlin
+
+  listOf(0b0u, 0b1U, 0b10uL, 0b11UL, 4u, 5U, 6uL, 7UL, 0x8u, 0x9U, 0xauL, 0xbUL)
+//^^^^^^ source.kotlin support.function.kotlin
+//       ^^^^ constant.numeric.binary.kotlin
+//             ^^^^ constant.numeric.binary.kotlin
+//                    ^^^^^ constant.numeric.binary.kotlin
+//                           ^^^^^ constant.numeric.binary.kotlin
+//                                   ^^ constant.numeric.integer.kotlin
+//                                       ^^ constant.numeric.integer.kotlin
+//                                           ^^^ constant.numeric.integer.kotlin
+//                                                ^^^ constant.numeric.integer.kotlin
+//                                                     ^^^^ constant.numeric.hex.kotlin
+//                                                           ^^^^ constant.numeric.hex.kotlin
+//                                                                 ^^^^^ constant.numeric.hex.kotlin
+//                                                                        ^^^^^ constant.numeric.hex.kotlin

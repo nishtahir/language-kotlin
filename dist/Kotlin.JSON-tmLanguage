@@ -299,6 +299,9 @@
                   "include": "#code"
                 }
               ]
+            },
+            {
+              "include": "#return-type"
             }
           ]
         }
@@ -332,6 +335,20 @@
             },
             {
               "include": "#types"
+            }
+          ]
+        },
+        "return-type": {
+          "patterns": [
+            {
+              "name": "meta.return.type.kotlin",
+              "begin": "(?<=\\))\\s*(:)(?=\\s*\\S)",
+              "end": "(?<![:|&])(?=$|^|[{};,]|//)",
+              "patterns": [
+                {
+                  "include": "#types"
+                }
+              ]
             }
           ]
         }

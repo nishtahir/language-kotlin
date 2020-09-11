@@ -370,7 +370,10 @@
 #                                                           ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
 #                                                            ^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                                                                ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
-#                                                                 ^^^^^^ source.kotlin meta.function.kotlin
+#                                                                 ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
+#                                                                  ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
+#                                                                   ^^^ source.kotlin meta.function.kotlin meta.return.type.kotlin support.class.kotlin
+#                                                                      ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
 #                                                                       ^ source.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
 >    test.test()
 #^^^^^^^^ source.kotlin meta.function.kotlin meta.block.kotlin
@@ -501,7 +504,10 @@
 #              ^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin entity.name.type.class.kotlin
 #                  ^ source.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.type.nullable.kotlin
 #                   ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
-#                    ^^^^^^^^^^ source.kotlin meta.function.kotlin
+#                    ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
+#                     ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
+#                      ^^^^^^^ source.kotlin meta.function.kotlin meta.return.type.kotlin support.class.kotlin
+#                             ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
 #                              ^ source.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
 >    val parent = node.getParent() ?: return null
 #^^^^ source.kotlin meta.function.kotlin meta.block.kotlin
@@ -696,7 +702,9 @@
 #                                                    ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
 #                                                     ^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                                                        ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
-#                                                         ^^^^^^^^ source.kotlin meta.function.kotlin
+#                                                         ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
+#                                                          ^ source.kotlin meta.function.kotlin meta.return.type.kotlin
+#                                                           ^^^^^^ source.kotlin meta.function.kotlin meta.return.type.kotlin support.class.kotlin
 >expect annotation class Test
 #^^^^^^ source.kotlin storage.modifier.kotlin
 #      ^ source.kotlin

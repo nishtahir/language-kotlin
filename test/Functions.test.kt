@@ -41,3 +41,14 @@
 //                           ^ meta.block.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
   }
 //^ meta.block.kotlin punctuation.section.group.end.kotlin
+
+  fun foo(): String? {
+//^^^ source.kotlin meta.function.kotlin keyword.other.kotlin
+//   ^ source.kotlin meta.function.kotlin
+//    ^^^ source.kotlin meta.function.kotlin entity.name.function.kotlin
+//       ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
+//        ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
+//           ^^^^^^^ source.kotlin meta.function.kotlin support.class.kotlin
+//                   ^ source.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
+  }
+//^ source.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.end.kotlin

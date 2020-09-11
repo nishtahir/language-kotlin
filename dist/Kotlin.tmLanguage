@@ -463,6 +463,10 @@
                   </dict>
                 </array>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#return-type</string>
+              </dict>
             </array>
           </dict>
         </array>
@@ -510,6 +514,27 @@
               <dict>
                 <key>include</key>
                 <string>#types</string>
+              </dict>
+            </array>
+          </dict>
+          <key>return-type</key>
+          <dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>meta.return.type.kotlin</string>
+                <key>begin</key>
+                <string>(?&lt;=\))\s*(:)(?=\s*\S)</string>
+                <key>end</key>
+                <string>(?&lt;![:|&amp;])(?=$|^|[{};,]|//)</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#types</string>
+                  </dict>
+                </array>
               </dict>
             </array>
           </dict>

@@ -60,6 +60,8 @@ repository:
                         patterns:
                             -
                                 include: '#code'
+                    -
+                        include: '#return-type'
         repository:
             function-parameter-list:
                 patterns:
@@ -81,3 +83,12 @@ repository:
                         name: punctuation.seperator.kotlin
                     -
                         include: '#types'
+            return-type:
+                patterns:
+                    -
+                        name: meta.return.type.kotlin
+                        begin: '(?<=\))\s*(:)(?=\s*\S)'
+                        end: '(?<![:|&])(?=$|^|[{};,]|//)'
+                        patterns:
+                            -
+                                include: '#types'

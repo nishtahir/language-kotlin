@@ -159,3 +159,12 @@
 //                                                           ^^^^ constant.numeric.hex.kotlin
 //                                                                 ^^^^^ constant.numeric.hex.kotlin
 //                                                                        ^^^^^ constant.numeric.hex.kotlin
+
+  val unicodeEscape = "\u3400"
+//^^^ source.kotlin storage.type.kotlin
+//   ^^^^^^^^^^^^^^^ source.kotlin
+//                  ^ source.kotlin keyword.operator.assignment.kotlin
+//                   ^ source.kotlin
+//                    ^ source.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
+//                     ^^^^^^ source.kotlin string.quoted.double.kotlin constant.character.escape.unicode.kotlin
+//                           ^ source.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin

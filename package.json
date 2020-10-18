@@ -26,8 +26,8 @@
     "format-json": "^1.0.3",
     "lcov-write": "^1.0.0",
     "plist": "^3.0.1",
-    "vscode-tmgrammar-test": "0.0.10",
-    "yaml": "1.6.0",
+    "vscode-tmgrammar-test": "^0.0.10",
+    "yaml": "^1.10.0",
     "yaml-source-map": "^2.1.1",
     "yamljs": "^0.3.0"
   }

@@ -405,86 +405,6 @@
         }
       ]
     },
-    "keyword-operator": {
-      "patterns": [
-        {
-          "match": "\\b(and|or|not|inv)\\b",
-          "name": "keyword.operator.bitwise.kotlin"
-        },
-        {
-          "match": "(==|!=|===|!==|<=|>=|<|>)",
-          "name": "keyword.operator.comparison.kotlin"
-        },
-        {
-          "match": "(=)",
-          "name": "keyword.operator.assignment.kotlin"
-        },
-        {
-          "match": "(:(?!:))",
-          "name": "keyword.operator.declaration.kotlin"
-        },
-        {
-          "match": "(\\?:)",
-          "name": "keyword.operator.elvis.kotlin"
-        },
-        {
-          "match": "(\\-\\-|\\+\\+)",
-          "name": "keyword.operator.increment-decrement.kotlin"
-        },
-        {
-          "match": "(\\-|\\+|\\*|\\/|%)",
-          "name": "keyword.operator.arithmetic.kotlin"
-        },
-        {
-          "match": "(\\+\\=|\\-\\=|\\*\\=|\\/\\=)",
-          "name": "keyword.operator.arithmetic.assign.kotlin"
-        },
-        {
-          "match": "(\\!|\\&\\&|\\|\\|)",
-          "name": "keyword.operator.logical.kotlin"
-        },
-        {
-          "match": "(\\.\\.)",
-          "name": "keyword.operator.range.kotlin"
-        }
-      ]
-    },
-    "keyword-punctuation": {
-      "patterns": [
-        {
-          "match": "::",
-          "name": "punctuation.accessor.reference.kotlin"
-        },
-        {
-          "match": "\\?\\.",
-          "name": "punctuation.accessor.dot.safe.kotlin"
-        },
-        {
-          "match": "(?<!\\?)\\.",
-          "name": "punctuation.accessor.dot.kotlin"
-        },
-        {
-          "match": "\\,",
-          "name": "punctuation.seperator.kotlin"
-        },
-        {
-          "match": "\\;",
-          "name": "punctuation.terminator.kotlin"
-        }
-      ]
-    },
-    "keyword-constant": {
-      "patterns": [
-        {
-          "match": "\\b(class)\\b",
-          "name": "constant.language.kotlin"
-        },
-        {
-          "match": "\\b(this|super)\\b",
-          "name": "variable.language.kotlin"
-        }
-      ]
-    },
     "parens": {
       "patterns": [
         {
@@ -599,13 +519,13 @@
           "include": "#types"
         },
         {
-          "include": "#keyword-operator"
+          "include": "#operators"
         },
         {
-          "include": "#keyword-constant"
+          "include": "#constants"
         },
         {
-          "include": "#keyword-punctuation"
+          "include": "#punctuations"
         },
         {
           "include": "#builtin-functions"
@@ -661,6 +581,86 @@
         {
           "match": "\\b(companion|object)\\b",
           "name": "storage.type.kotlin"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "\\b(and|or|not|inv)\\b",
+          "name": "keyword.operator.bitwise.kotlin"
+        },
+        {
+          "match": "(==|!=|===|!==|<=|>=|<|>)",
+          "name": "keyword.operator.comparison.kotlin"
+        },
+        {
+          "match": "(=)",
+          "name": "keyword.operator.assignment.kotlin"
+        },
+        {
+          "match": "(:(?!:))",
+          "name": "keyword.operator.declaration.kotlin"
+        },
+        {
+          "match": "(\\?:)",
+          "name": "keyword.operator.elvis.kotlin"
+        },
+        {
+          "match": "(\\-\\-|\\+\\+)",
+          "name": "keyword.operator.increment-decrement.kotlin"
+        },
+        {
+          "match": "(\\-|\\+|\\*|\\/|%)",
+          "name": "keyword.operator.arithmetic.kotlin"
+        },
+        {
+          "match": "(\\+\\=|\\-\\=|\\*\\=|\\/\\=)",
+          "name": "keyword.operator.arithmetic.assign.kotlin"
+        },
+        {
+          "match": "(\\!|\\&\\&|\\|\\|)",
+          "name": "keyword.operator.logical.kotlin"
+        },
+        {
+          "match": "(\\.\\.)",
+          "name": "keyword.operator.range.kotlin"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "match": "\\b(class)\\b",
+          "name": "constant.language.kotlin"
+        },
+        {
+          "match": "\\b(this|super)\\b",
+          "name": "variable.language.kotlin"
+        }
+      ]
+    },
+    "punctuations": {
+      "patterns": [
+        {
+          "match": "::",
+          "name": "punctuation.accessor.reference.kotlin"
+        },
+        {
+          "match": "\\?\\.",
+          "name": "punctuation.accessor.dot.safe.kotlin"
+        },
+        {
+          "match": "(?<!\\?)\\.",
+          "name": "punctuation.accessor.dot.kotlin"
+        },
+        {
+          "match": "\\,",
+          "name": "punctuation.seperator.kotlin"
+        },
+        {
+          "match": "\\;",
+          "name": "punctuation.terminator.kotlin"
         }
       ]
     },

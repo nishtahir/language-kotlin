@@ -29,7 +29,7 @@ $ npm run build
 
 This will outputs the merged sources to the `dist` directory. At this point
 it's highly recommended that you test your changes using [GitHub Lightshow](https://github-lightshow.herokuapp.com/). There's some manual work involved in doing this however this is the closest
-representation to what it would look like when it's deployed available right now.
+representation of what it would look like when it is deployed that is available at this time.
 
 You can format your sources using the code formatting script.
 
@@ -39,7 +39,7 @@ $ npm run format
 
 ## Testing
 
-> All changes to the grammar must be accompanied by tests.
+> All changes to the grammar must be accompanied by tests covering relevant scopes.
 
 Tests are run using [`vscode-tmgrammar-test`](https://github.com/PanAeon/vscode-tmgrammar-test). 
 Test cases and regression tests are available in the `/test` folder.

@@ -5,12 +5,6 @@ A textmate compatible grammar for the Kotlin language.
 ![Node.js CI](https://github.com/nishtahir/language-kotlin/workflows/Node.js%20CI/badge.svg?branch=master)
 [![codecov](https://codecov.io/gh/nishtahir/language-kotlin/branch/master/graph/badge.svg)](https://codecov.io/gh/nishtahir/language-kotlin)
 
-# Contributing
-
-## Requirements
-
-* NodeJS
-
 ## Setup
 
 This project is built using a couple of handy node scripts. Begin by installing the
@@ -59,12 +53,12 @@ The test suite can be run using `npm`
 $ npm test
 ```
 
-# Useful resources
+## Useful resources
 
 * [GitHub Lightshow](https://github-lightshow.herokuapp.com/) - Useful for testing Grammar sources against Code to inspect the highlighting behavior
 * [Sublime Text scope naming reference](https://www.sublimetext.com/docs/3/scope_naming.html) - Reference on Textmate scope naming
 
 
-# Code of Conduct
+## Code of Conduct
 
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md) which _must_ be observed in interactions with the project.

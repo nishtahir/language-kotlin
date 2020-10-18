@@ -619,126 +619,6 @@
           </dict>
         </array>
       </dict>
-      <key>keyword-operator</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>match</key>
-            <string>\b(and|or|not|inv)\b</string>
-            <key>name</key>
-            <string>keyword.operator.bitwise.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(==|!=|===|!==|&lt;=|&gt;=|&lt;|&gt;)</string>
-            <key>name</key>
-            <string>keyword.operator.comparison.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(=)</string>
-            <key>name</key>
-            <string>keyword.operator.assignment.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(:(?!:))</string>
-            <key>name</key>
-            <string>keyword.operator.declaration.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\?:)</string>
-            <key>name</key>
-            <string>keyword.operator.elvis.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\-\-|\+\+)</string>
-            <key>name</key>
-            <string>keyword.operator.increment-decrement.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\-|\+|\*|\/|%)</string>
-            <key>name</key>
-            <string>keyword.operator.arithmetic.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\+\=|\-\=|\*\=|\/\=)</string>
-            <key>name</key>
-            <string>keyword.operator.arithmetic.assign.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\!|\&amp;\&amp;|\|\|)</string>
-            <key>name</key>
-            <string>keyword.operator.logical.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(\.\.)</string>
-            <key>name</key>
-            <string>keyword.operator.range.kotlin</string>
-          </dict>
-        </array>
-      </dict>
-      <key>keyword-punctuation</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>match</key>
-            <string>::</string>
-            <key>name</key>
-            <string>punctuation.accessor.reference.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>\?\.</string>
-            <key>name</key>
-            <string>punctuation.accessor.dot.safe.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>(?&lt;!\?)\.</string>
-            <key>name</key>
-            <string>punctuation.accessor.dot.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>\,</string>
-            <key>name</key>
-            <string>punctuation.seperator.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>\;</string>
-            <key>name</key>
-            <string>punctuation.terminator.kotlin</string>
-          </dict>
-        </array>
-      </dict>
-      <key>keyword-constant</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>match</key>
-            <string>\b(class)\b</string>
-            <key>name</key>
-            <string>constant.language.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>\b(this|super)\b</string>
-            <key>name</key>
-            <string>variable.language.kotlin</string>
-          </dict>
-        </array>
-      </dict>
       <key>parens</key>
       <dict>
         <key>patterns</key>
@@ -908,15 +788,15 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#keyword-operator</string>
+            <string>#operators</string>
           </dict>
           <dict>
             <key>include</key>
-            <string>#keyword-constant</string>
+            <string>#constants</string>
           </dict>
           <dict>
             <key>include</key>
-            <string>#keyword-punctuation</string>
+            <string>#punctuations</string>
           </dict>
           <dict>
             <key>include</key>
@@ -999,6 +879,126 @@
             <string>\b(companion|object)\b</string>
             <key>name</key>
             <string>storage.type.kotlin</string>
+          </dict>
+        </array>
+      </dict>
+      <key>operators</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>\b(and|or|not|inv)\b</string>
+            <key>name</key>
+            <string>keyword.operator.bitwise.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(==|!=|===|!==|&lt;=|&gt;=|&lt;|&gt;)</string>
+            <key>name</key>
+            <string>keyword.operator.comparison.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(=)</string>
+            <key>name</key>
+            <string>keyword.operator.assignment.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(:(?!:))</string>
+            <key>name</key>
+            <string>keyword.operator.declaration.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\?:)</string>
+            <key>name</key>
+            <string>keyword.operator.elvis.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\-\-|\+\+)</string>
+            <key>name</key>
+            <string>keyword.operator.increment-decrement.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\-|\+|\*|\/|%)</string>
+            <key>name</key>
+            <string>keyword.operator.arithmetic.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\+\=|\-\=|\*\=|\/\=)</string>
+            <key>name</key>
+            <string>keyword.operator.arithmetic.assign.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\!|\&amp;\&amp;|\|\|)</string>
+            <key>name</key>
+            <string>keyword.operator.logical.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\.\.)</string>
+            <key>name</key>
+            <string>keyword.operator.range.kotlin</string>
+          </dict>
+        </array>
+      </dict>
+      <key>constants</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>\b(class)\b</string>
+            <key>name</key>
+            <string>constant.language.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(this|super)\b</string>
+            <key>name</key>
+            <string>variable.language.kotlin</string>
+          </dict>
+        </array>
+      </dict>
+      <key>punctuations</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>::</string>
+            <key>name</key>
+            <string>punctuation.accessor.reference.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\?\.</string>
+            <key>name</key>
+            <string>punctuation.accessor.dot.safe.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;!\?)\.</string>
+            <key>name</key>
+            <string>punctuation.accessor.dot.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\,</string>
+            <key>name</key>
+            <string>punctuation.seperator.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\;</string>
+            <key>name</key>
+            <string>punctuation.terminator.kotlin</string>
           </dict>
         </array>
       </dict>

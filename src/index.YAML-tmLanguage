@@ -14,18 +14,6 @@ patterns:
     -
         include: '#code'
 repository:
-    builtin-functions:
-        patterns:
-            -
-                match: '\b(apply|also|let|takeIf|run|takeUnless|with|print|println)\b\s*(?={|\()'
-                captures:
-                    '1':
-                        name: support.function.kotlin
-            -
-                match: '\b(mutableListOf|listOf|mutableMapOf|mapOf|mutableSetOf|setOf)\b\s*(?={|\()'
-                captures:
-                    '1':
-                        name: support.function.kotlin
     keyword-operator:
         patterns:
             -

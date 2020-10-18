@@ -52,3 +52,19 @@
 //                   ^ source.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
   }
 //^ source.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
+
+  val numbers = arrayListOf(1, 2, 3)
+//^^^ source.kotlin storage.type.kotlin
+//   ^^^^^^^^^ source.kotlin
+//            ^ source.kotlin keyword.operator.assignment.kotlin
+//             ^ source.kotlin
+//              ^^^^^^^^^^^ source.kotlin support.function.kotlin
+//                         ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
+//                          ^ source.kotlin meta.group.kotlin constant.numeric.integer.kotlin
+//                           ^ source.kotlin meta.group.kotlin punctuation.seperator.kotlin
+//                            ^ source.kotlin meta.group.kotlin
+//                             ^ source.kotlin meta.group.kotlin constant.numeric.integer.kotlin
+//                              ^ source.kotlin meta.group.kotlin punctuation.seperator.kotlin
+//                               ^ source.kotlin meta.group.kotlin
+//                                ^ source.kotlin meta.group.kotlin constant.numeric.integer.kotlin
+//                                 ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin

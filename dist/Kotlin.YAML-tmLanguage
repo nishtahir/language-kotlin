@@ -297,7 +297,7 @@ repository:
             string:
                 patterns:
                     - {begin: '"""', beginCaptures: {'0': {name: punctuation.definition.string.begin.kotlin}}, end: '"""', endCaptures: {'0': {name: punctuation.definition.string.end.kotlin}}, name: string.quoted.triple.kotlin, patterns: [{include: '#string-content'}]}
-                    - {begin: '"', beginCaptures: {'0': {name: punctuation.definition.string.begin.kotlin}}, end: '"', endCaptures: {'0': {name: punctuation.definition.string.end.kotlin}}, name: string.quoted.double.kotlin, patterns: [{include: '#string-content'}]}
+                    - {begin: '(?!'')"(?!'')', beginCaptures: {'0': {name: punctuation.definition.string.begin.kotlin}}, end: '"', endCaptures: {'0': {name: punctuation.definition.string.end.kotlin}}, name: string.quoted.double.kotlin, patterns: [{include: '#string-content'}]}
                 repository:
                     string-content: {patterns: [{match: '\\[0\\tnr"'']', name: constant.character.escape.kotlin}, {match: '\\(x[\da-fA-F]{2}|u[\da-fA-F]{4}|.)', name: constant.character.escape.unicode.kotlin}, {begin: '\$(\{)', beginCaptures: {'1': {name: punctuation.section.block.begin.kotlin}}, end: '\}', endCaptures: {'0': {name: punctuation.section.block.end.kotlin}}, name: entity.string.template.element.kotlin}, {match: '\$[a-zA-Z_]\w*', name: entity.string.template.element.kotlin}]}
             'null':

@@ -174,3 +174,11 @@
 //   ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
 //    ^^^ source.kotlin meta.group.kotlin
 //       ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
+
+  foo(""""."""")
+//^^^ source.kotlin
+//   ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
+//    ^^^ source.kotlin meta.group.kotlin string.quoted.triple.kotlin punctuation.definition.string.begin.kotlin
+//        ^^^ source.kotlin meta.group.kotlin string.quoted.triple.kotlin
+//          ^^^ source.kotlin meta.group.kotlin string.quoted.triple.kotlin punctuation.definition.string.end.kotlin
+//             ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin

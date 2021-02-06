@@ -57,6 +57,19 @@ repository:
                         patterns:
                             -
                                 include: '#string-content'
+                    -
+                        begin: ''''
+                        beginCaptures:
+                            '0':
+                                name: punctuation.definition.string.begin.kotlin
+                        end: ''''
+                        endCaptures:
+                            '0':
+                                name: punctuation.definition.string.end.kotlin
+                        name: string.quoted.single.kotlin
+                        patterns:
+                            -
+                                include: '#string-content'
                 repository:
                     string-content:
                         patterns:

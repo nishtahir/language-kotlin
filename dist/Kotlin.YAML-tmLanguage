@@ -96,7 +96,7 @@ repository:
     class-ident:
         patterns:
             -
-                match: '\b[A-Z]\w+\b'
+                match: '\b[A-Z_]\w*\b'
                 name: entity.name.type.class.kotlin
                 comment: 'Classes generally start with an Uppercase Char'
     imports:

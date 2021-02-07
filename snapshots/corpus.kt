@@ -55,7 +55,7 @@ suspend fun <T, U> SequenceBuilder<Int>.yieldIfOdd(x: Int) {
     if (x % 2 != 0) yield(x)
 }
 
-val function = fun(@Inject x: Int, y: Int, lamda: (A, B) -> Unit): Int {
+val function = fun(@Inject x: Int, y: Int, lambda: (A, B) -> Unit): Int {
     test.test()
     return x + y;
 }

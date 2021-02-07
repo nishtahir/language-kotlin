@@ -36,3 +36,8 @@ actual class Foo(bar: String) {
 }
 // <--- ^ punctuation.section.group.begin.kotlin
 
+enum class A {
+//         ^ source.kotlin meta.class.kotlin entity.name.class.kotlin
+    B
+//  ^ source.kotlin meta.class.kotlin meta.block.kotlin entity.name.type.class.kotlin
+}

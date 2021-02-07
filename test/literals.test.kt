@@ -172,8 +172,18 @@
   foo('"')
 //^^^ source.kotlin
 //   ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
-//    ^^^ source.kotlin meta.group.kotlin
+//    ^ source.kotlin meta.group.kotlin string.quoted.single.kotlin punctuation.definition.string.begin.kotlin
+//     ^ source.kotlin meta.group.kotlin string.quoted.single.kotlin
+//      ^ source.kotlin meta.group.kotlin string.quoted.single.kotlin punctuation.definition.string.end.kotlin
 //       ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
+
+  foo('\'')
+//^^^ source.kotlin
+//   ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
+//    ^ source.kotlin meta.group.kotlin string.quoted.single.kotlin punctuation.definition.string.begin.kotlin
+//     ^^ source.kotlin meta.group.kotlin string.quoted.single.kotlin constant.character.escape.kotlin
+//       ^ source.kotlin meta.group.kotlin string.quoted.single.kotlin punctuation.definition.string.end.kotlin
+//        ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
 
   foo(""""."""")
 //^^^ source.kotlin

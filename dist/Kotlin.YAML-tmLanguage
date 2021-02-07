@@ -27,12 +27,13 @@ repository:
                 name: meta.class.kotlin
                 patterns:
                     - {include: '#keyword'}
-                    - {begin: \b(class|interface)\b\s+(\w+), beginCaptures: {'1': {name: storage.modifier.kotlin}, '2': {name: entity.name.class.kotlin}}, end: '(?=\(|\{|:|$)', patterns: [{include: '#comments'}, {include: '#annotations'}, {include: '#types'}]}
+                    - {begin: \b(class|interface)\b\s+(\w+), beginCaptures: {'1': {name: storage.modifier.kotlin}, '2': {name: entity.name.class.kotlin}}, end: '(?=\(|\{|$)', patterns: [{include: '#comments'}, {include: '#annotations'}, {include: '#types'}]}
                     - {begin: (\(), beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}, '1': {name: punctuation.definition.parameters.begin.kotlin}}, end: (\)), endCaptures: {'0': {name: punctuation.section.group.end.kotlin}, '1': {name: punctuation.definition.parameters.end.kotlin}}, name: meta.parameters.kotlin, patterns: [{include: '#comments'}, {include: '#class-parameter-list'}]}
                     - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}}, end: '\}', endCaptures: {'0': {name: punctuation.section.group.end.kotlin}}, name: meta.block.kotlin, patterns: [{include: '#code'}]}
         repository:
             class-parameter-list:
                 patterns:
+                    - {include: '#generic'}
                     - {include: '#annotations'}
                     - {include: '#keywords'}
                     - {match: '(\w+)\s*(:)', captures: {'1': {name: variable.parameter.function.kotlin}, '2': {name: keyword.operator.declaration.kotlin}}}
@@ -77,7 +78,7 @@ repository:
                 name: meta.function.kotlin
                 patterns:
                     - {include: '#keywords'}
-                    - {begin: \bfun\b, beginCaptures: {'0': {name: keyword.other.kotlin}}, end: '(?=\()', patterns: [{match: '(`[^`]*`)', comment: 'Backtick quoted function names', captures: {'0': {name: entity.name.function.kotlin}, '1': {name: string.quoted.backtick.kotlin}}}, {match: '([\.<\?>\w]+\.)?(\w+)', captures: {'2': {name: entity.name.function.kotlin}}}, {include: '#types'}]}
+                    - {begin: \bfun\b, beginCaptures: {'0': {name: keyword.other.kotlin}}, end: '(?=\()', patterns: [{include: '#generic'}, {match: '(`[^`]*`)', comment: 'Backtick quoted function names', captures: {'0': {name: entity.name.function.kotlin}, '1': {name: string.quoted.backtick.kotlin}}}, {match: '([\.<\?>\w]+\.)?(\w+)', captures: {'2': {name: entity.name.function.kotlin}}}, {include: '#types'}]}
                     - {begin: (\(), beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}, '1': {name: punctuation.definition.parameters.begin.kotlin}}, end: (\)), endCaptures: {'0': {name: punctuation.section.group.end.kotlin}, '1': {name: punctuation.definition.parameters.end.kotlin}}, name: meta.parameters.kotlin, patterns: [{include: '#function-parameter-list'}]}
                     - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}}, end: '\}', endCaptures: {'0': {name: punctuation.section.group.end.kotlin}}, name: meta.block.kotlin, patterns: [{include: '#code'}]}
                     - {include: '#return-type'}
@@ -93,10 +94,30 @@ repository:
             return-type:
                 patterns:
                     - {name: meta.return.type.kotlin, begin: '(?<=\))\s*(:)(?=\s*\S)', end: '(?<![:|&])(?=$|^|[{};,]|//)', patterns: [{include: '#types'}]}
+    generic:
+        patterns:
+            -
+                begin: '(?=\<(?:[A-Z_]|\*|in|out))'
+                end: '(?<=\>)(?!\>)'
+                patterns:
+                    - {match: '<', name: punctuation.bracket.angle.begin.kotlin}
+                    - {match: '\*', name: storage.modifier.generic.wildcard.kotlin}
+                    - {include: '#generic-parameter-list'}
+                    - {match: ',', name: punctuation.seperator.kotlin}
+                    - {match: '>', name: punctuation.bracket.angle.end.kotlin}
+        repository:
+            generic-parameter-list:
+                patterns:
+                    - {include: '#annotations'}
+                    - {match: \b(in|out)\b, name: storage.modifier.generic.variance.kotlin}
+                    - {include: '#built-in-types'}
+                    - {include: '#class-ident'}
+                    - {include: '#generic'}
+                    - {match: ':', name: storage.modifier.kotlin}
     class-ident:
         patterns:
             -
-                match: '\b[A-Z]\w+\b'
+                match: '\b[A-Z_]\w*\b'
                 name: entity.name.type.class.kotlin
                 comment: 'Classes generally start with an Uppercase Char'
     imports:
@@ -336,6 +357,8 @@ repository:
                 include: '#built-in-types'
             -
                 include: '#class-ident'
+            -
+                include: '#generic'
             -
                 match: '(?<![/=\-+!*%<>&|\^~.])(->)(?![/=\-+!*%<>&|\^~.])'
                 captures:

@@ -1,0 +1,39 @@
+repository:
+    generic:
+        patterns:
+            -
+                begin: '(?=\<(?:[A-Z_]|\*|in|out))'
+                end: '(?<=\>)(?!\>)'
+                patterns:
+                    -
+                        match: '<'
+                        name: punctuation.bracket.angle.begin.kotlin
+                    -
+                        match: '\*'
+                        name: storage.modifier.generic.wildcard.kotlin
+                    -
+                        include: '#generic-parameter-list'
+                    -
+                        match: ','
+                        name: punctuation.seperator.kotlin
+                    -
+                        match: '>'
+                        name: punctuation.bracket.angle.end.kotlin
+
+        repository:
+            generic-parameter-list:
+                patterns:
+                    -
+                        include: '#annotations'
+                    -
+                        match: '\b(in|out)\b'
+                        name: storage.modifier.generic.variance.kotlin
+                    -
+                        include: '#built-in-types'
+                    -
+                        include: '#class-ident'
+                    -
+                        include: '#generic'
+                    -
+                        match: ':'
+                        name: storage.modifier.kotlin

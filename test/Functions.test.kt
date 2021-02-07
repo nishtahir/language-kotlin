@@ -9,7 +9,9 @@
 //                  ^^^^ meta.parameters.kotlin variable.parameter.function.kotlin
 //                      ^ meta.parameters.kotlin keyword.operator.declaration.kotlin
 //                        ^^^^^ meta.parameters.kotlin support.class.kotlin
+//                             ^ punctuation.bracket.angle.begin.kotlin
 //                              ^^^^^^ meta.parameters.kotlin support.class.kotlin
+//                                    ^ punctuation.bracket.angle.end.kotlin
 //                                     ^ meta.parameters.kotlin punctuation.section.group.end.kotlin
 //                                       ^ meta.block.kotlin punctuation.section.group.begin.kotlin
       println("Hello Kotlin!")

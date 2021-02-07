@@ -44,9 +44,9 @@
 #                      ^ source.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
 #                       ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
 #                        ^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
-#                             ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
+#                             ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.bracket.angle.begin.kotlin
 #                              ^^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
-#                                    ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
+#                                    ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.bracket.angle.end.kotlin
 #                                     ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                                      ^ source.kotlin meta.function.kotlin
 #                                       ^ source.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
@@ -269,9 +269,11 @@
 #  ^^^^^^^^^^^^^^^^^^^ source.kotlin punctuation.definition.comment.kotlin
 >fun <T> foo() {
 #^^^ source.kotlin meta.function.kotlin keyword.other.kotlin
-#   ^^ source.kotlin meta.function.kotlin
-#     ^ source.kotlin meta.function.kotlin entity.name.function.kotlin
-#      ^^ source.kotlin meta.function.kotlin
+#   ^ source.kotlin meta.function.kotlin
+#    ^ source.kotlin meta.function.kotlin punctuation.bracket.angle.begin.kotlin
+#     ^ source.kotlin meta.function.kotlin entity.name.type.class.kotlin
+#      ^ source.kotlin meta.function.kotlin punctuation.bracket.angle.end.kotlin
+#       ^ source.kotlin meta.function.kotlin
 #        ^^^ source.kotlin meta.function.kotlin entity.name.function.kotlin
 #           ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
 #            ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
@@ -301,11 +303,14 @@
 #^^^^^^^ source.kotlin storage.modifier.kotlin
 #       ^ source.kotlin
 #        ^^^ source.kotlin meta.function.kotlin keyword.other.kotlin
-#           ^^ source.kotlin meta.function.kotlin
-#             ^ source.kotlin meta.function.kotlin entity.name.function.kotlin
-#              ^^ source.kotlin meta.function.kotlin
-#                ^ source.kotlin meta.function.kotlin entity.name.function.kotlin
-#                 ^^ source.kotlin meta.function.kotlin
+#           ^ source.kotlin meta.function.kotlin
+#            ^ source.kotlin meta.function.kotlin punctuation.bracket.angle.begin.kotlin
+#             ^ source.kotlin meta.function.kotlin entity.name.type.class.kotlin
+#              ^ source.kotlin meta.function.kotlin punctuation.seperator.kotlin
+#               ^ source.kotlin meta.function.kotlin
+#                ^ source.kotlin meta.function.kotlin entity.name.type.class.kotlin
+#                 ^ source.kotlin meta.function.kotlin punctuation.bracket.angle.end.kotlin
+#                  ^ source.kotlin meta.function.kotlin
 #                   ^^^^^^^^^^^^^^^^^^^^^ source.kotlin meta.function.kotlin
 #                                        ^^^^^^^^^^ source.kotlin meta.function.kotlin entity.name.function.kotlin
 #                                                  ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
@@ -363,7 +368,9 @@
 #                                                ^ source.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
 #                                                 ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
 #                                                  ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin
-#                                                   ^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin
+#                                                   ^ source.kotlin meta.function.kotlin meta.parameters.kotlin entity.name.type.class.kotlin
+#                                                    ^^ source.kotlin meta.function.kotlin meta.parameters.kotlin
+#                                                      ^ source.kotlin meta.function.kotlin meta.parameters.kotlin entity.name.type.class.kotlin
 #                                                       ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin
 #                                                        ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
 #                                                         ^^ source.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.type.function.kotlin
@@ -557,7 +564,9 @@
 #     ^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
 #          ^ source.kotlin meta.class.kotlin
 #           ^^^^^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
-#                  ^^^^^^^^^^^^ source.kotlin meta.class.kotlin
+#                  ^^ source.kotlin meta.class.kotlin
+#                    ^^^^^^^^^ source.kotlin meta.class.kotlin entity.name.type.class.kotlin
+#                             ^ source.kotlin meta.class.kotlin
 #                              ^ source.kotlin meta.class.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
 >    companion object {
 #^^^^ source.kotlin meta.class.kotlin meta.block.kotlin
@@ -845,7 +854,13 @@
 #               ^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
 #                    ^ source.kotlin meta.class.kotlin
 #                     ^^^^^^^^^^^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
-#                                  ^^^^^^^ source.kotlin meta.class.kotlin
+#                                  ^ source.kotlin meta.class.kotlin punctuation.bracket.angle.begin.kotlin
+#                                   ^ source.kotlin meta.class.kotlin entity.name.type.class.kotlin
+#                                    ^ source.kotlin meta.class.kotlin punctuation.seperator.kotlin
+#                                     ^ source.kotlin meta.class.kotlin
+#                                      ^ source.kotlin meta.class.kotlin entity.name.type.class.kotlin
+#                                       ^ source.kotlin meta.class.kotlin punctuation.bracket.angle.end.kotlin
+#                                        ^ source.kotlin meta.class.kotlin
 #                                         ^^^^^^^ source.kotlin meta.class.kotlin meta.annotation.kotlin
 #                                                ^^^^^^^^^^^^ source.kotlin meta.class.kotlin
 #                                                            ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
@@ -991,12 +1006,12 @@
 #                 ^ source.kotlin meta.class.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
 #                  ^ source.kotlin meta.class.kotlin meta.parameters.kotlin
 #                   ^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin support.class.kotlin
-#                      ^ source.kotlin meta.class.kotlin meta.parameters.kotlin
+#                      ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.bracket.angle.begin.kotlin
 #                       ^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin support.class.kotlin
 #                             ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.seperator.kotlin
 #                              ^ source.kotlin meta.class.kotlin meta.parameters.kotlin
 #                               ^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin support.class.kotlin
-#                                     ^^ source.kotlin meta.class.kotlin meta.parameters.kotlin
+#                                     ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.bracket.angle.end.kotlin
 >)
 #^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 >

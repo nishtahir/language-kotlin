@@ -6,6 +6,8 @@ repository:
             -
                 include: '#class-ident'
             -
+                include: '#generic'
+            -
                 match: '(?<![/=\-+!*%<>&|\^~.])(->)(?![/=\-+!*%<>&|\^~.])'
                 captures:
                     '1':

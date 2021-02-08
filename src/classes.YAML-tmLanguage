@@ -15,7 +15,7 @@ repository:
                                 name: storage.modifier.kotlin
                             '2':
                                 name: entity.name.class.kotlin
-                        end: '(?=\(|\{|:|$)'
+                        end: '(?=\(|\{|$)'
                         patterns:
                             -
                                 include: '#comments'
@@ -58,6 +58,8 @@ repository:
         repository:
             class-parameter-list:
                 patterns:
+                    -
+                        include: '#generic'
                     -
                         include: '#annotations'
                     -

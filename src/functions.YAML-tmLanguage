@@ -28,6 +28,8 @@ repository:
                         end: '(?=\()'
                         patterns:
                             -
+                                include: '#generic'
+                            -
                                 match: '(`[^`]*`)'
                                 comment: 'Backtick quoted function names'
                                 captures:

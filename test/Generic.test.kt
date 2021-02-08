@@ -8,7 +8,7 @@ class Test<in T : CharSequence> {
     fun <E : Number> do(input: T) {
 //      ^ punctuation.bracket.angle.begin.kotlin
 //       ^ meta.class.kotlin entity.name.type.class.kotlin
-//         ^ storage.modifier.kotlin
+//         ^ keyword.operator.declaration.kotlin
 //           ^^^^^^ meta.class.kotlin entity.name.type.class.kotlin
 //                 ^ punctuation.bracket.angle.end.kotlin
     }
@@ -16,7 +16,7 @@ class Test<in T : CharSequence> {
 
 val list: MutableList<*>
 //                   ^ punctuation.bracket.angle.begin.kotlin
-//                    ^ storage.modifier.generic.wildcard.kotlin
+//                    ^ entity.name.type.generic.wildcard.kotlin
 //                     ^ punctuation.bracket.angle.end.kotlin
 
 fun <T, E> test() {

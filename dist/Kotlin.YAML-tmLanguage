@@ -101,10 +101,10 @@ repository:
                 end: '(?<=\>)(?!\>)'
                 patterns:
                     - {match: '<', name: punctuation.bracket.angle.begin.kotlin}
-                    - {match: '\*', name: storage.modifier.generic.wildcard.kotlin}
+                    - {match: '>', name: punctuation.bracket.angle.end.kotlin}
+                    - {match: '\*', name: entity.name.type.generic.wildcard.kotlin}
                     - {include: '#generic-parameter-list'}
                     - {match: ',', name: punctuation.seperator.kotlin}
-                    - {match: '>', name: punctuation.bracket.angle.end.kotlin}
         repository:
             generic-parameter-list:
                 patterns:
@@ -113,7 +113,7 @@ repository:
                     - {include: '#built-in-types'}
                     - {include: '#class-ident'}
                     - {include: '#generic'}
-                    - {match: ':', name: storage.modifier.kotlin}
+                    - {include: '#operators'}
     class-ident:
         patterns:
             -

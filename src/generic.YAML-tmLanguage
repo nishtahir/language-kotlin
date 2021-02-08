@@ -9,16 +9,16 @@ repository:
                         match: '<'
                         name: punctuation.bracket.angle.begin.kotlin
                     -
+                        match: '>'
+                        name: punctuation.bracket.angle.end.kotlin
+                    -
                         match: '\*'
-                        name: storage.modifier.generic.wildcard.kotlin
+                        name: entity.name.type.generic.wildcard.kotlin
                     -
                         include: '#generic-parameter-list'
                     -
                         match: ','
                         name: punctuation.seperator.kotlin
-                    -
-                        match: '>'
-                        name: punctuation.bracket.angle.end.kotlin
 
         repository:
             generic-parameter-list:
@@ -35,5 +35,4 @@ repository:
                     -
                         include: '#generic'
                     -
-                        match: ':'
-                        name: storage.modifier.kotlin
+                        include: '#operators'

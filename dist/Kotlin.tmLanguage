@@ -597,9 +597,15 @@
               </dict>
               <dict>
                 <key>match</key>
+                <string>&gt;</string>
+                <key>name</key>
+                <string>punctuation.bracket.angle.end.kotlin</string>
+              </dict>
+              <dict>
+                <key>match</key>
                 <string>\*</string>
                 <key>name</key>
-                <string>storage.modifier.generic.wildcard.kotlin</string>
+                <string>entity.name.type.generic.wildcard.kotlin</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -610,12 +616,6 @@
                 <string>,</string>
                 <key>name</key>
                 <string>punctuation.seperator.kotlin</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>&gt;</string>
-                <key>name</key>
-                <string>punctuation.bracket.angle.end.kotlin</string>
               </dict>
             </array>
           </dict>
@@ -649,10 +649,8 @@
                 <string>#generic</string>
               </dict>
               <dict>
-                <key>match</key>
-                <string>:</string>
-                <key>name</key>
-                <string>storage.modifier.kotlin</string>
+                <key>include</key>
+                <string>#operators</string>
               </dict>
             </array>
           </dict>

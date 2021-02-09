@@ -38,7 +38,7 @@
 #   ^ source.kotlin meta.function.kotlin
 #    ^^^^ source.kotlin meta.function.kotlin entity.name.function.kotlin
 #        ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
-#         ^^^^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin meta.annotation.kotlin
+#         ^^^^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin storage.type.annotation.kotlin
 #                 ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
 #                  ^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin variable.parameter.function.kotlin
 #                      ^ source.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
@@ -165,7 +165,7 @@
 #                     ^^ source.kotlin constant.numeric.integer.kotlin
 >
 >@get:Rule
-#^^^^^^^^^ source.kotlin meta.annotation.kotlin
+#^^^^^^^^^ source.kotlin storage.type.annotation.kotlin
 >val activityRule = ActivityTestRule(SplashActivity::class.java)
 #^^^ source.kotlin storage.type.kotlin
 #   ^^^^^^^^^^^^^^ source.kotlin
@@ -350,7 +350,7 @@
 #              ^ source.kotlin
 #               ^^^ source.kotlin meta.function.kotlin keyword.other.kotlin
 #                  ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
-#                   ^^^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin meta.annotation.kotlin
+#                   ^^^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin storage.type.annotation.kotlin
 #                          ^ source.kotlin meta.function.kotlin meta.parameters.kotlin
 #                           ^ source.kotlin meta.function.kotlin meta.parameters.kotlin variable.parameter.function.kotlin
 #                            ^ source.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
@@ -840,12 +840,12 @@
 #^^ source.kotlin punctuation.definition.comment.kotlin comment.line.double-slash.kotlin
 #  ^^^^^^^^^^^^^^^^^^^^ source.kotlin punctuation.definition.comment.kotlin
 >@file:JvmName("Foo")
-#^^^^^^^^^^^^^ source.kotlin meta.annotation.kotlin
-#             ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
-#              ^ source.kotlin meta.group.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
-#               ^^^ source.kotlin meta.group.kotlin string.quoted.double.kotlin
-#                  ^ source.kotlin meta.group.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
-#                   ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
+#^^^^^^^^^^^^^ source.kotlin meta.annotation.kotlin storage.type.annotation.kotlin
+#             ^ source.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
+#              ^ source.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
+#               ^^^ source.kotlin meta.annotation.kotlin string.quoted.double.kotlin
+#                  ^ source.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
+#                   ^ source.kotlin meta.annotation.kotlin punctuation.definition.arguments.end.kotlin
 >private sealed class InjectedClass<T, U> @Inject constructor(val test: Int = 50, var anotherVar: String = "hello world") : SomeSuperClass(test, anotherVar) {
 #^^^^^^^ source.kotlin storage.modifier.kotlin
 #       ^ source.kotlin
@@ -861,7 +861,7 @@
 #                                      ^ source.kotlin meta.class.kotlin entity.name.type.class.kotlin
 #                                       ^ source.kotlin meta.class.kotlin punctuation.bracket.angle.end.kotlin
 #                                        ^ source.kotlin meta.class.kotlin
-#                                         ^^^^^^^ source.kotlin meta.class.kotlin meta.annotation.kotlin
+#                                         ^^^^^^^ source.kotlin meta.class.kotlin storage.type.annotation.kotlin
 #                                                ^^^^^^^^^^^^ source.kotlin meta.class.kotlin
 #                                                            ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
 #                                                             ^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin storage.type.kotlin
@@ -959,7 +959,7 @@
 #   ^^^ source.kotlin
 #      ^ source.kotlin keyword.operator.assignment.kotlin
 #       ^ source.kotlin
-#        ^^^^^^^^^^^^ source.kotlin meta.annotation.kotlin
+#        ^^^^^^^^^^^^ source.kotlin storage.type.annotation.kotlin
 #                    ^ source.kotlin
 #                     ^ source.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
 #                      ^ source.kotlin meta.block.kotlin
@@ -1022,7 +1022,7 @@
 #          ^ source.kotlin meta.class.kotlin
 #           ^^^^^^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
 #                   ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
-#                    ^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin
+#                    ^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin storage.type.annotation.kotlin
 #                                   ^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 #                                    ^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
 #                                     ^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin
@@ -1038,7 +1038,7 @@
 #                                                                ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.seperator.kotlin
 >                    @SerializedName("param2") val param2: String,
 #^^^^^^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin
-#                    ^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin
+#                    ^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin storage.type.annotation.kotlin
 #                                   ^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 #                                    ^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
 #                                     ^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin
@@ -1054,7 +1054,7 @@
 #                                                                ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.seperator.kotlin
 >                    @SerializedName("param3") val param3: String) {
 #^^^^^^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin
-#                    ^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin
+#                    ^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin storage.type.annotation.kotlin
 #                                   ^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 #                                    ^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
 #                                     ^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin

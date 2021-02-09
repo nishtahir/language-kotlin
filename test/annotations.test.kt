@@ -1,15 +1,16 @@
 // SYNTAX TEST "source.kotlin" "Annotations"
 
-@file:JvmName("Foo")
-//<------------- meta.annotation.kotlin
-//           ^ punctuation.section.group.begin.kotlin
-//            ^ meta.group.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
-//             ^^^ meta.group.kotlin string.quoted.double.kotlin
-//                ^ meta.group.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
-//                 ^ meta.group.kotlin punctuation.section.group.end.kotlin
+  @file:JvmName("Foo")
+//^^^^^^^^^^^^^^^^^^^^ meta.annotation.kotlin
+//^^^^^^^^^^^^^ storage.type.annotation.kotlin
+//             ^ punctuation.definition.arguments.begin.kotlin
+//              ^ meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
+//               ^^^ meta.annotation.kotlin string.quoted.double.kotlin
+//                  ^ meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
+//                   ^ meta.annotation.kotlin punctuation.definition.arguments.end.kotlin
 
 data class Response(@SerializedName("param1") val param1: String,
-//                  ^^^^^^^^^^^^^^^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin
+//                  ^^^^^^^^^^^^^^^ meta.class.kotlin meta.parameters.kotlin storage.type.annotation.kotlin
 //                                 ^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 //                                  ^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
 //                                   ^^^^^^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin
@@ -22,7 +23,7 @@ data class Response(@SerializedName("param1") val param1: String,
 //                                                              ^ meta.class.kotlin meta.parameters.kotlin punctuation.seperator.kotlin
 
                     @SerializedName("param2") val param2: String,
-//                  ^^^^^^^^^^^^^^^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin
+//                  ^^^^^^^^^^^^^^^ meta.class.kotlin meta.parameters.kotlin storage.type.annotation.kotlin
 //                                 ^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 //                                  ^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
 //                                   ^^^^^^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin
@@ -34,7 +35,7 @@ data class Response(@SerializedName("param1") val param1: String,
 //                                                        ^^^^^^ meta.class.kotlin meta.parameters.kotlin support.class.kotlin
 //                                                              ^ meta.class.kotlin meta.parameters.kotlin punctuation.seperator.kotlin
                     @SerializedName("param3") val param3: String) {
-//                  ^^^^^^^^^^^^^^^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin
+//                  ^^^^^^^^^^^^^^^ meta.class.kotlin meta.parameters.kotlin storage.type.annotation.kotlin
 //                                 ^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 //                                  ^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
 //                                   ^^^^^^ meta.class.kotlin meta.parameters.kotlin meta.annotation.kotlin string.quoted.double.kotlin
@@ -50,13 +51,13 @@ data class Response(@SerializedName("param1") val param1: String,
 
 class Example {
     @set:Inject
-//  ^^^^^^^^^^^ meta.annotation.kotlin
+//  ^^^^^^^^^^^ storage.type.annotation.kotlin
     var collaborator: Collaborator
 }
 
 
   @MultiLineAnnotation(
-//^^^^^^^^^^^^^^^^^^^^ meta.annotation.kotlin
+//^^^^^^^^^^^^^^^^^^^^ meta.annotation.kotlin storage.type.annotation.kotlin
 //                    ^ meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
       "One",
 //    ^ meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin

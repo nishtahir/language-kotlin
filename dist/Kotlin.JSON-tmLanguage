@@ -3,14 +3,12 @@
     "annotations": {
       "patterns": [
         {
-          "comment": "Use-site annotation",
-          "match": "@(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:\\s*?[a-zA-Z_]\\w*",
-          "name": "meta.annotation.kotlin"
-        },
-        {
-          "begin": "@[a-zA-Z_]\\w*\\s*(\\()",
+          "begin": "(@(?:(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:\\s*)?[a-zA-Z_]\\w*)(\\()",
           "beginCaptures": {
             "1": {
+              "name": "storage.type.annotation.kotlin"
+            },
+            "2": {
               "name": "punctuation.definition.arguments.begin.kotlin"
             }
           },
@@ -32,8 +30,8 @@
           ]
         },
         {
-          "match": "@[a-zA-Z_]\\w*",
-          "name": "meta.annotation.kotlin"
+          "match": "@(?:(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:\\s*)?[a-zA-Z_]\\w*",
+          "name": "storage.type.annotation.kotlin"
         }
       ]
     },

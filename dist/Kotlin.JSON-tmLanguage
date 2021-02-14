@@ -595,7 +595,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "(\\!in|\\!is|as\\?)",
+          "match": "(\\!in|\\!is|as\\?)\\b",
           "name": "keyword.operator.kotlin"
         },
         {

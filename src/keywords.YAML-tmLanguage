@@ -20,7 +20,7 @@ repository:
                 match: \b(data|inline|tailrec|operator|infix|typealias|reified)\b
                 name: storage.type.kotlin
             -
-                match: \b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield|out|in|lateinit)\b
+                match: \b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend(?!\s*[\(]?\s*\{)|yield|out|in|lateinit)\b
                 name: storage.modifier.kotlin
             -
                 match: \b(try|catch|finally|throw)\b

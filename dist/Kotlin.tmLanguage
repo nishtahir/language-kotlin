@@ -932,7 +932,13 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield|out|in|lateinit)\b</string>
+            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|yield|out|in|lateinit)\b</string>
+            <key>name</key>
+            <string>storage.modifier.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(suspend(?!\s*[\(]?\s*\{))\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
           </dict>

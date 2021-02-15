@@ -896,7 +896,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(\!in|\!is|as\?)</string>
+            <string>(\!in|\!is|as\?)\b</string>
             <key>name</key>
             <string>keyword.operator.kotlin</string>
           </dict>

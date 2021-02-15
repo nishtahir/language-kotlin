@@ -2,7 +2,7 @@ repository:
     keywords:
         patterns:
             -
-                match: '(\!in|\!is|as\?)'
+                match: '(\!in|\!is|as\?)\b'
                 name: keyword.operator.kotlin
             -
                 match: \b(in|is|as|assert)\b

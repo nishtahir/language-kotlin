@@ -4,7 +4,7 @@
 //^^^ keyword.other.kotlin
 //    ^^^^ entity.name.function.kotlin
 //        ^ meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
-//         ^ meta.parameters.kotlin meta.annotation.kotlin punctuation.definition.annotation.kotlin
+//         ^ meta.parameters.kotlin meta.annotation.kotlin keyword.control.annotation.kotlin
 //          ^^^^^^^ meta.parameters.kotlin meta.annotation.kotlin storage.type.annotation.kotlin
 //                 ^ meta.parameters.kotlin
 //                  ^^^^ meta.parameters.kotlin variable.parameter.function.kotlin

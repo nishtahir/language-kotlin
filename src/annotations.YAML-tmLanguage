@@ -5,7 +5,7 @@ repository:
                 begin: '(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)(\()'
                 beginCaptures:
                     '1':
-                        name: punctuation.definition.annotation.kotlin
+                        name: keyword.control.annotation.kotlin
                     '2':
                         name: punctuation.definition.keyword.kotlin
                     '3':
@@ -27,7 +27,7 @@ repository:
                 match: '(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)'
                 captures:
                     '1':
-                        name: punctuation.definition.annotation.kotlin
+                        name: keyword.control.annotation.kotlin
                     '2':
                         name: punctuation.definition.keyword.kotlin
                     '3':

@@ -16,7 +16,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.annotation.kotlin</string>
+                <string>keyword.control.annotation.kotlin</string>
               </dict>
               <key>2</key>
               <dict>
@@ -68,7 +68,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.annotation.kotlin</string>
+                <string>keyword.control.annotation.kotlin</string>
               </dict>
               <key>2</key>
               <dict>

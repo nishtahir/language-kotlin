@@ -610,7 +610,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "(\\!in|\\!is|as\\?)",
+          "match": "(\\!in|\\!is|as\\?)\\b",
           "name": "keyword.operator.kotlin"
         },
         {
@@ -634,7 +634,11 @@
           "name": "storage.type.kotlin"
         },
         {
-          "match": "\\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|suspend|yield|out|in|lateinit)\\b",
+          "match": "\\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|yield|out|in|lateinit)\\b",
+          "name": "storage.modifier.kotlin"
+        },
+        {
+          "match": "\\b(suspend(?!\\s*[\\(]?\\s*\\{))\\b",
           "name": "storage.modifier.kotlin"
         },
         {

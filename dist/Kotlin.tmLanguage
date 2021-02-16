@@ -10,15 +10,25 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(@(?:(?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?[a-zA-Z_]\w*)(\()</string>
+            <string>(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)(\()</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.annotation.kotlin</string>
+                <string>punctuation.definition.annotation.kotlin</string>
               </dict>
               <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.keyword.kotlin</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.annotation.kotlin</string>
+              </dict>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>punctuation.definition.arguments.begin.kotlin</string>
@@ -52,9 +62,27 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>@(?:(?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?[a-zA-Z_]\w*</string>
+            <string>(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.annotation.kotlin</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.keyword.kotlin</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.annotation.kotlin</string>
+              </dict>
+            </dict>
             <key>name</key>
-            <string>storage.type.annotation.kotlin</string>
+            <string>meta.annotation.kotlin</string>
           </dict>
         </array>
       </dict>

@@ -37,7 +37,6 @@ repository:
             -
                 match: \b(companion|object)\b
                 name: storage.type.kotlin
-    
     operators:
         patterns:
             -

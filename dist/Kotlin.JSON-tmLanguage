@@ -3,12 +3,18 @@
     "annotations": {
       "patterns": [
         {
-          "begin": "(@(?:(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:\\s*)?[a-zA-Z_]\\w*)(\\()",
+          "begin": "(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:\\s*)?([a-zA-Z_]\\w*)(\\()",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.annotation.kotlin"
+              "name": "punctuation.definition.annotation.kotlin"
             },
             "2": {
+              "name": "punctuation.definition.keyword.kotlin"
+            },
+            "3": {
+              "name": "storage.type.annotation.kotlin"
+            },
+            "4": {
               "name": "punctuation.definition.arguments.begin.kotlin"
             }
           },
@@ -30,8 +36,19 @@
           ]
         },
         {
-          "match": "@(?:(?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:\\s*)?[a-zA-Z_]\\w*",
-          "name": "storage.type.annotation.kotlin"
+          "match": "(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\\s*:\\s*)?([a-zA-Z_]\\w*)",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.annotation.kotlin"
+            },
+            "2": {
+              "name": "punctuation.definition.keyword.kotlin"
+            },
+            "3": {
+              "name": "storage.type.annotation.kotlin"
+            }
+          },
+          "name": "meta.annotation.kotlin"
         }
       ]
     },

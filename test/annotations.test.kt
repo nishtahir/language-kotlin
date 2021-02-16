@@ -2,7 +2,7 @@
 
   @file:JvmName("Foo")
 //^ meta.annotation.kotlin keyword.control.annotation.kotlin
-// ^^^^^ meta.annotation.kotlin punctuation.definition.keyword.kotlin
+// ^^^^^ meta.annotation.kotlin keyword.annotation.target.kotlin
 //      ^^^^^^^ meta.annotation.kotlin storage.type.annotation.kotlin
 //             ^ meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 //              ^ meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
@@ -56,7 +56,7 @@ data class Response(@SerializedName("param1") val param1: String,
 class Example {
     @set:Inject
 //  ^ meta.annotation.kotlin keyword.control.annotation.kotlin
-//   ^^^^ meta.annotation.kotlin punctuation.definition.keyword.kotlin
+//   ^^^^ meta.annotation.kotlin keyword.annotation.target.kotlin
 //       ^^^^^^ meta.annotation.kotlin storage.type.annotation.kotlin
     var collaborator: Collaborator
 }

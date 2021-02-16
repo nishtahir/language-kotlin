@@ -21,7 +21,9 @@
               <key>2</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.keyword.kotlin</string>
+                <string>keyword.annotation.target.kotlin</string>
+                <key>comment</key>
+                <string>Use-Site Annotation Target</string>
               </dict>
               <key>3</key>
               <dict>
@@ -73,7 +75,9 @@
               <key>2</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.keyword.kotlin</string>
+                <string>keyword.annotation.target.kotlin</string>
+                <key>comment</key>
+                <string>Use-Site Annotation Target</string>
               </dict>
               <key>3</key>
               <dict>

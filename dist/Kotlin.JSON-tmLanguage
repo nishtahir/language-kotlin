@@ -9,7 +9,8 @@
               "name": "keyword.control.annotation.kotlin"
             },
             "2": {
-              "name": "punctuation.definition.keyword.kotlin"
+              "name": "keyword.annotation.target.kotlin",
+              "comment": "Use-Site Annotation Target"
             },
             "3": {
               "name": "storage.type.annotation.kotlin"
@@ -42,7 +43,8 @@
               "name": "keyword.control.annotation.kotlin"
             },
             "2": {
-              "name": "punctuation.definition.keyword.kotlin"
+              "name": "keyword.annotation.target.kotlin",
+              "comment": "Use-Site Annotation Target"
             },
             "3": {
               "name": "storage.type.annotation.kotlin"

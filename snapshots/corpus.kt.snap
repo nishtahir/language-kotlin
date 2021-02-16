@@ -167,7 +167,7 @@
 >
 >@get:Rule
 #^ source.kotlin meta.annotation.kotlin keyword.control.annotation.kotlin
-# ^^^^ source.kotlin meta.annotation.kotlin punctuation.definition.keyword.kotlin
+# ^^^^ source.kotlin meta.annotation.kotlin keyword.annotation.target.kotlin
 #     ^^^^ source.kotlin meta.annotation.kotlin storage.type.annotation.kotlin
 >val activityRule = ActivityTestRule(SplashActivity::class.java)
 #^^^ source.kotlin storage.type.kotlin
@@ -845,7 +845,7 @@
 #  ^^^^^^^^^^^^^^^^^^^^ source.kotlin punctuation.definition.comment.kotlin
 >@file:JvmName("Foo")
 #^ source.kotlin meta.annotation.kotlin keyword.control.annotation.kotlin
-# ^^^^^^^^^^^^ source.kotlin meta.annotation.kotlin punctuation.definition.keyword.kotlin
+# ^^^^^^^^^^^^ source.kotlin meta.annotation.kotlin keyword.annotation.target.kotlin
 #      ^^^^^^^ source.kotlin meta.annotation.kotlin storage.type.annotation.kotlin
 #             ^ source.kotlin meta.annotation.kotlin punctuation.definition.arguments.begin.kotlin
 #              ^ source.kotlin meta.annotation.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin

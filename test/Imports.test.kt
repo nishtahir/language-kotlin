@@ -21,4 +21,14 @@
 //                                    ^ source.kotlin meta.import.kotlin
 //                                     ^^ source.kotlin meta.import.kotlin keyword.other.kotlin
 //                                       ^ source.kotlin meta.import.kotlin
-//                                        ^^^^^^^ source.kotlin meta.import.kotlin entity.name.type 
+//                                        ^^^^^^^ source.kotlin meta.import.kotlin entity.name.type
+
+  import Test.`take String as CharSequence` as take
+//^^^^^^ source.kotlin meta.import.kotlin keyword.other.import.kotlin
+//      ^ source.kotlin meta.import.kotlin
+//       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.kotlin meta.import.kotlin storage.modifier.import.kotlin
+//                         ^^ - keyword.other.kotlin
+//                                         ^ source.kotlin meta.import.kotlin
+//                                          ^^ source.kotlin meta.import.kotlin keyword.other.kotlin
+//                                            ^ source.kotlin meta.import.kotlin
+//                                             ^^^^ source.kotlin meta.import.kotlin entity.name.type

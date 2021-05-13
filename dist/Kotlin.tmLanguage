@@ -67,7 +67,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?=\b(?:class|interface)\s+\w+)\b</string>
+            <string>(?=\b(?:(?:(?:data|value)\s+)?class|(?:fun\s+)?interface)\s+\w+)\b</string>
             <key>end</key>
             <string>(?=\}|$)</string>
             <key>name</key>
@@ -80,7 +80,7 @@
               </dict>
               <dict>
                 <key>begin</key>
-                <string>\b(class|interface)\b\s+(\w+)</string>
+                <string>\b((?:(?:data|value)\s+)?class|(?:fun\s+)?interface)\b\s+(\w+)</string>
                 <key>beginCaptures</key>
                 <dict>
                   <key>1</key>
@@ -908,7 +908,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(const)\b</string>
+            <string>\b(const|lateinit)\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
           </dict>
@@ -926,21 +926,39 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(data|inline|tailrec|operator|infix|typealias|reified)\b</string>
+            <string>\b(tailrec|operator|infix|typealias|reified|copy(?=\s+fun|\s+var))\b</string>
             <key>name</key>
             <string>storage.type.kotlin</string>
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|yield|out|in|lateinit)\b</string>
+            <string>\b(out|in|yield|typealias|override)\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(?&lt;![+-/%*=(,]\s)(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|expect|actual)(?=\s(?!(?:\s*)(?:[+-/%*=:).,]|$)))\b</string>
+            <key>name</key>
+            <string>storage.modifier.kotlin</string>
+            <key>comment</key>
+            <string>Soft modifiers</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\b(vararg(?=\s+\w+:))\b</string>
+            <key>name</key>
+            <string>storage.modifier.kotlin</string>
+            <key>comment</key>
+            <string>Soft modifier</string>
           </dict>
           <dict>
             <key>match</key>
             <string>\b(suspend(?!\s*[\(]?\s*\{))\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
+            <key>comment</key>
+            <string>Soft modifier</string>
           </dict>
           <dict>
             <key>match</key>

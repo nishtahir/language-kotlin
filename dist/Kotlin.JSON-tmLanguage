@@ -237,7 +237,7 @@
       "patterns": [
         {
           "begin": "(?=\\b(?:fun)\\b)",
-          "end": "(?=$|=|\\})",
+          "end": "(?<=$|=|\\})",
           "name": "meta.function.kotlin",
           "patterns": [
             {
@@ -307,6 +307,10 @@
               ]
             },
             {
+              "match": "=",
+              "name": "keyword.operator.single-expression.kotlin"
+            },
+            {
               "begin": "\\{",
               "beginCaptures": {
                 "0": {
@@ -369,7 +373,7 @@
             {
               "name": "meta.return.type.kotlin",
               "begin": "(?<=\\))\\s*(:)(?=\\s*\\S)",
-              "end": "(?<![:|&])(?=$|^|[{};,]|//)",
+              "end": "(?<![:|&])(?=$|^|[={};,]|//)",
               "patterns": [
                 {
                   "include": "#types"

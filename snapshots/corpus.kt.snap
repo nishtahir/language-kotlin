@@ -423,7 +423,7 @@
 #             ^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                 ^ source.kotlin meta.function.kotlin
-#                  ^ source.kotlin keyword.operator.assignment.kotlin
+#                  ^ source.kotlin meta.function.kotlin keyword.operator.single-expression.kotlin
 #                   ^^^ source.kotlin
 #                      ^ source.kotlin keyword.operator.arithmetic.kotlin
 #                       ^ source.kotlin
@@ -443,7 +443,7 @@
 #             ^^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                   ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                    ^ source.kotlin meta.function.kotlin
-#                     ^ source.kotlin keyword.operator.assignment.kotlin
+#                     ^ source.kotlin meta.function.kotlin keyword.operator.single-expression.kotlin
 #                      ^^^ source.kotlin
 #                         ^^ source.kotlin keyword.operator.comparison.kotlin
 #                           ^ source.kotlin
@@ -744,7 +744,7 @@
 #                                                     ^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                                                        ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                                                         ^ source.kotlin meta.function.kotlin
-#                                                          ^ source.kotlin keyword.operator.assignment.kotlin
+#                                                          ^ source.kotlin meta.function.kotlin keyword.operator.single-expression.kotlin
 #                                                           ^ source.kotlin
 #                                                            ^^^^^^ source.kotlin support.class.kotlin
 #                                                                  ^ source.kotlin punctuation.accessor.dot.kotlin

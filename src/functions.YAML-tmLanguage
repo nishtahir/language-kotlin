@@ -15,7 +15,7 @@ repository:
         patterns:
             -
                 begin: '(?=\b(?:fun)\b)'
-                end: '(?=$|=|\})'
+                end: '(?<=$|=|\})'
                 name: meta.function.kotlin
                 patterns:
                     -
@@ -62,6 +62,9 @@ repository:
                             -
                                 include: '#function-parameter-list'
                     -
+                        match: '='
+                        name: keyword.operator.single-expression.kotlin
+                    -
                         begin: '\{'
                         beginCaptures:
                             '0':
@@ -102,7 +105,7 @@ repository:
                     -
                         name: meta.return.type.kotlin
                         begin: '(?<=\))\s*(:)(?=\s*\S)'
-                        end: '(?<![:|&])(?=$|^|[{};,]|//)'
+                        end: '(?<![:|&])(?=$|^|[={};,]|//)'
                         patterns:
                             -
                                 include: '#types'

@@ -70,3 +70,19 @@
 //                               ^ source.kotlin meta.group.kotlin
 //                                ^ source.kotlin meta.group.kotlin constant.numeric.integer.kotlin
 //                                 ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
+
+  fun singleExpression(): String = "Hello World!"
+//^^^ source.kotlin meta.function.kotlin keyword.other.kotlin
+//   ^ source.kotlin meta.function.kotlin
+//    ^^^^^^^^^^^^^^^^ source.kotlin meta.function.kotlin entity.name.function.kotlin
+//                    ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
+//                     ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
+//                        ^^^^^^ source.kotlin meta.function.kotlin support.class.kotlin
+//                               ^ source.kotlin meta.function.kotlin keyword.operator.single-expression.kotlin
+//                                 ^ source.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
+//                                  ^^^^^^^^^^^^ source.kotlin string.quoted.double.kotlin
+//                                              ^ source.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
+
+fun singleExpression(input: String = "Default") = input
+//                                 ^ - keyword.operator.single-expression.kotlin
+//                                              ^ keyword.operator.single-expression.kotlin

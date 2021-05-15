@@ -19,14 +19,13 @@ repository:
                     -
                         match: ','
                         name: punctuation.seperator.kotlin
-
         repository:
             generic-parameter-list:
                 patterns:
                     -
                         include: '#annotations'
                     -
-                        match: '\b(in|out)\b'
+                        match: \b(in|out)\b
                         name: storage.modifier.generic.variance.kotlin
                     -
                         include: '#built-in-types'

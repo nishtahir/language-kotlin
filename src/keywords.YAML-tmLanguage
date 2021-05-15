@@ -8,9 +8,6 @@ repository:
                 match: \b(in|is|as|assert)\b
                 name: keyword.operator.kotlin
             -
-                match: \b(const|lateinit)\b
-                name: storage.modifier.kotlin
-            -
                 match: \b(val|var)\b
                 name: storage.type.kotlin
             -
@@ -23,7 +20,7 @@ repository:
                 match: \b(out|in|yield|typealias|override)\b
                 name: storage.modifier.kotlin
             -
-                match: \b(?<![+-/%*=(,]\s)(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|expect|actual)(?=\s(?!(?:\s*)(?:[+-/%*=:).,]|$)))\b
+                match: \b(?<![+-/%*=(,]\s)(inline|external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|expect|actual|const|lateinit)(?=\s(?!(?:\s*)(?:[+-/%*=:).,]|$)))\b
                 name: storage.modifier.kotlin
                 comment: 'Soft modifiers'
             -

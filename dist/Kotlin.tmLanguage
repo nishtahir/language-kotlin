@@ -67,7 +67,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?=\b(?:(?:(?:data|value)\s+)?class|(?:fun\s+)?interface)\s+\w+)\b</string>
+            <string>(?=\b(?:(?:(?:data|value)\s+)?class|(?:(?:fun|value)\s+)?interface)\s+\w+)\b</string>
             <key>end</key>
             <string>(?=\}|$)</string>
             <key>name</key>
@@ -80,7 +80,7 @@
               </dict>
               <dict>
                 <key>begin</key>
-                <string>\b((?:(?:data|value)\s+)?class|(?:fun\s+)?interface)\b\s+(\w+)</string>
+                <string>\b((?:(?:data|value)\s+)?class|(?:(?:fun|value)\s+)?interface)\b\s+(\w+)</string>
                 <key>beginCaptures</key>
                 <dict>
                   <key>1</key>
@@ -908,12 +908,6 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(const|lateinit)\b</string>
-            <key>name</key>
-            <string>storage.modifier.kotlin</string>
-          </dict>
-          <dict>
-            <key>match</key>
             <string>\b(val|var)\b</string>
             <key>name</key>
             <string>storage.type.kotlin</string>
@@ -938,7 +932,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(?&lt;![+-/%*=(,]\s)(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|expect|actual)(?=\s(?!(?:\s*)(?:[+-/%*=:).,]|$)))\b</string>
+            <string>\b(?&lt;![+-/%*=(,]\s)(inline|external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|expect|actual|const|lateinit)(?=\s(?!(?:\s*)(?:[+-/%*=:).,]|$)))\b</string>
             <key>name</key>
             <string>storage.modifier.kotlin</string>
             <key>comment</key>

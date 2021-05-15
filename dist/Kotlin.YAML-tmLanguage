@@ -74,12 +74,13 @@ repository:
         patterns:
             -
                 begin: '(?=\b(?:fun)\b)'
-                end: '(?=$|=|\})'
+                end: '(?<=$|=|\})'
                 name: meta.function.kotlin
                 patterns:
                     - {include: '#keywords'}
                     - {begin: \bfun\b, beginCaptures: {'0': {name: keyword.other.kotlin}}, end: '(?=\()', patterns: [{include: '#generic'}, {match: '(`[^`]*`)', comment: 'Backtick quoted function names', captures: {'0': {name: entity.name.function.kotlin}, '1': {name: string.quoted.backtick.kotlin}}}, {match: '([\.<\?>\w]+\.)?(\w+)', captures: {'2': {name: entity.name.function.kotlin}}}, {include: '#types'}]}
                     - {begin: (\(), beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}, '1': {name: punctuation.definition.parameters.begin.kotlin}}, end: (\)), endCaptures: {'0': {name: punctuation.section.group.end.kotlin}, '1': {name: punctuation.definition.parameters.end.kotlin}}, name: meta.parameters.kotlin, patterns: [{include: '#function-parameter-list'}]}
+                    - {match: '=', name: keyword.operator.single-expression.kotlin}
                     - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}}, end: '\}', endCaptures: {'0': {name: punctuation.section.group.end.kotlin}}, name: meta.block.kotlin, patterns: [{include: '#code'}]}
                     - {include: '#return-type'}
         repository:
@@ -93,7 +94,7 @@ repository:
                     - {include: '#types'}
             return-type:
                 patterns:
-                    - {name: meta.return.type.kotlin, begin: '(?<=\))\s*(:)(?=\s*\S)', end: '(?<![:|&])(?=$|^|[{};,]|//)', patterns: [{include: '#types'}]}
+                    - {name: meta.return.type.kotlin, begin: '(?<=\))\s*(:)(?=\s*\S)', end: '(?<![:|&])(?=$|^|[={};,]|//)', patterns: [{include: '#types'}]}
     generic:
         patterns:
             -

@@ -364,7 +364,7 @@
             <key>begin</key>
             <string>(?=\b(?:fun)\b)</string>
             <key>end</key>
-            <string>(?=$|=|\})</string>
+            <string>(?&lt;=$|=|\})</string>
             <key>name</key>
             <string>meta.function.kotlin</string>
             <key>patterns</key>
@@ -471,6 +471,12 @@
                 </array>
               </dict>
               <dict>
+                <key>match</key>
+                <string>=</string>
+                <key>name</key>
+                <string>keyword.operator.single-expression.kotlin</string>
+              </dict>
+              <dict>
                 <key>begin</key>
                 <string>\{</string>
                 <key>beginCaptures</key>
@@ -565,7 +571,7 @@
                 <key>begin</key>
                 <string>(?&lt;=\))\s*(:)(?=\s*\S)</string>
                 <key>end</key>
-                <string>(?&lt;![:|&amp;])(?=$|^|[{};,]|//)</string>
+                <string>(?&lt;![:|&amp;])(?=$|^|[={};,]|//)</string>
                 <key>patterns</key>
                 <array>
                   <dict>

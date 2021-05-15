@@ -192,3 +192,11 @@
 //        ^^^ source.kotlin meta.group.kotlin string.quoted.triple.kotlin
 //          ^^^ source.kotlin meta.group.kotlin string.quoted.triple.kotlin punctuation.definition.string.end.kotlin
 //             ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
+
+  foo("'Hello ' World'")
+//^^^ source.kotlin
+//   ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
+//    ^ source.kotlin meta.group.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
+//     ^^^^^^^^^^^^^^^ source.kotlin meta.group.kotlin string.quoted.double.kotlin
+//                    ^ source.kotlin meta.group.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
+//                     ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin

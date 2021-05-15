@@ -446,7 +446,7 @@
     "imports": {
       "patterns": [
         {
-          "match": "^\\s*(import)\\s+([^ $.]+(?:\\.(?:[`][^$`]+[`]|[^` $.]+))+)(?:\\s+(as)\\s+([`][^$`]+[`]|[^` $.]+))?",
+          "match": "^\\s*(import)\\s+((?:[`][^$`]+[`]|[^` $.]+)(?:\\.(?:[`][^$`]+[`]|[^` $.]+))*)(?:\\s+(as)\\s+([`][^$`]+[`]|[^` $.]+))?$",
           "captures": {
             "1": {
               "name": "keyword.other.import.kotlin"
@@ -795,7 +795,7 @@
               ]
             },
             {
-              "begin": "(?!')\"(?!')",
+              "begin": "(?!')\"",
               "beginCaptures": {
                 "0": {
                   "name": "punctuation.definition.string.begin.kotlin"

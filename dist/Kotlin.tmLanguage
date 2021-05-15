@@ -676,7 +676,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>^\s*(import)\s+([^ $.]+(?:\.(?:[`][^$`]+[`]|[^` $.]+))+)(?:\s+(as)\s+([`][^$`]+[`]|[^` $.]+))?</string>
+            <string>^\s*(import)\s+((?:[`][^$`]+[`]|[^` $.]+)(?:\.(?:[`][^$`]+[`]|[^` $.]+))*)(?:\s+(as)\s+([`][^$`]+[`]|[^` $.]+))?$</string>
             <key>captures</key>
             <dict>
               <key>1</key>
@@ -1196,7 +1196,7 @@
               </dict>
               <dict>
                 <key>begin</key>
-                <string>(?!')"(?!')</string>
+                <string>(?!')"</string>
                 <key>beginCaptures</key>
                 <dict>
                   <key>0</key>

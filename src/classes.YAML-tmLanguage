@@ -2,14 +2,14 @@ repository:
     class-literal:
         patterns:
             -
-                begin: '(?=\b(?:class|interface)\s+\w+)\b'
+                begin: '(?=\b(?:(?:(?:data|value)\s+)?class|(?:(?:fun|value)\s+)?interface)\s+\w+)\b'
                 end: '(?=\}|$)'
                 name: meta.class.kotlin
                 patterns:
                     -
                         include: '#keyword'
                     -
-                        begin: \b(class|interface)\b\s+(\w+)
+                        begin: \b((?:(?:data|value)\s+)?class|(?:(?:fun|value)\s+)?interface)\b\s+(\w+)
                         beginCaptures:
                             '1':
                                 name: storage.modifier.kotlin

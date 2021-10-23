@@ -58,7 +58,9 @@
 #             ^^^^^^^^^^^^^^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin
 #                           ^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin
 #                            ^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin punctuation.section.block.begin.kotlin
-#                             ^^^^^^^^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin
+#                             ^^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin comment.block.kotlin punctuation.definition.comment.begin.kotlin
+#                               ^^^^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin comment.block.kotlin
+#                                   ^^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin comment.block.kotlin punctuation.definition.comment.end.kotlin
 #                                     ^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin punctuation.section.block.end.kotlin
 #                                      ^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
 #                                       ^ source.kotlin meta.function.kotlin meta.block.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
@@ -114,7 +116,9 @@
 #                 ^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
 #                  ^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin
 #                   ^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin punctuation.section.block.begin.kotlin
-#                    ^^^^^^^^^^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin
+#                    ^^^^^^^^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin
+#                            ^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
+#                             ^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
 #                              ^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin entity.string.template.element.kotlin punctuation.section.block.end.kotlin
 #                               ^ source.kotlin meta.function.kotlin meta.block.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
 >}

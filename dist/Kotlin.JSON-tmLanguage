@@ -870,7 +870,12 @@
                       "name": "punctuation.section.block.end.kotlin"
                     }
                   },
-                  "name": "entity.string.template.element.kotlin"
+                  "name": "entity.string.template.element.kotlin",
+                  "patterns": [
+                    {
+                      "include": "#code"
+                    }
+                  ]
                 },
                 {
                   "match": "\\$[a-zA-Z_]\\w*",

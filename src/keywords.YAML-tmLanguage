@@ -8,23 +8,29 @@ repository:
                 match: \b(in|is|as|assert)\b
                 name: keyword.operator.kotlin
             -
-                match: \b(const)\b
-                name: storage.modifier.kotlin
-            -
                 match: \b(val|var)\b
                 name: storage.type.kotlin
             -
                 match: \b(\_)\b
                 name: punctuation.definition.variable.kotlin
             -
-                match: \b(data|inline|tailrec|operator|infix|typealias|reified)\b
+                match: \b(tailrec|operator|infix|typealias|reified|copy(?=\s+fun|\s+var))\b
                 name: storage.type.kotlin
             -
-                match: \b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|yield|out|in|lateinit)\b
+                match: \b(out|in|yield|typealias|override)\b
                 name: storage.modifier.kotlin
+            -
+                match: \b(?<![+-/%*=(,]\s)(inline|external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|expect|actual|const|lateinit)(?=\s(?!(?:\s*)(?:[+-/%*=:).,]|$)))\b
+                name: storage.modifier.kotlin
+                comment: 'Soft modifiers'
+            -
+                match: \b(vararg(?=\s+\w+:))\b
+                name: storage.modifier.kotlin
+                comment: 'Soft modifier'
             -
                 match: \b(suspend(?!\s*[\(]?\s*\{))\b
                 name: storage.modifier.kotlin
+                comment: 'Soft modifier'
             -
                 match: \b(try|catch|finally|throw)\b
                 name: keyword.control.catch-exception.kotlin

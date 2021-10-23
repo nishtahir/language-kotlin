@@ -40,7 +40,7 @@
     "class-literal": {
       "patterns": [
         {
-          "begin": "(?=\\b(?:class|interface)\\s+\\w+)\\b",
+          "begin": "(?=\\b(?:(?:(?:data|value)\\s+)?class|(?:(?:fun|value)\\s+)?interface)\\s+\\w+)\\b",
           "end": "(?=\\}|$)",
           "name": "meta.class.kotlin",
           "patterns": [
@@ -48,7 +48,7 @@
               "include": "#keyword"
             },
             {
-              "begin": "\\b(class|interface)\\b\\s+(\\w+)",
+              "begin": "\\b((?:(?:data|value)\\s+)?class|(?:(?:fun|value)\\s+)?interface)\\b\\s+(\\w+)",
               "beginCaptures": {
                 "1": {
                   "name": "storage.modifier.kotlin"
@@ -237,7 +237,7 @@
       "patterns": [
         {
           "begin": "(?=\\b(?:fun)\\b)",
-          "end": "(?=$|=|\\})",
+          "end": "(?<=$|=|\\})",
           "name": "meta.function.kotlin",
           "patterns": [
             {
@@ -307,6 +307,10 @@
               ]
             },
             {
+              "match": "=",
+              "name": "keyword.operator.single-expression.kotlin"
+            },
+            {
               "begin": "\\{",
               "beginCaptures": {
                 "0": {
@@ -369,7 +373,7 @@
             {
               "name": "meta.return.type.kotlin",
               "begin": "(?<=\\))\\s*(:)(?=\\s*\\S)",
-              "end": "(?<![:|&])(?=$|^|[{};,]|//)",
+              "end": "(?<![:|&])(?=$|^|[={};,]|//)",
               "patterns": [
                 {
                   "include": "#types"
@@ -603,10 +607,6 @@
           "name": "keyword.operator.kotlin"
         },
         {
-          "match": "\\b(const)\\b",
-          "name": "storage.modifier.kotlin"
-        },
-        {
           "match": "\\b(val|var)\\b",
           "name": "storage.type.kotlin"
         },
@@ -615,16 +615,27 @@
           "name": "punctuation.definition.variable.kotlin"
         },
         {
-          "match": "\\b(data|inline|tailrec|operator|infix|typealias|reified)\\b",
+          "match": "\\b(tailrec|operator|infix|typealias|reified|copy(?=\\s+fun|\\s+var))\\b",
           "name": "storage.type.kotlin"
         },
         {
-          "match": "\\b(external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|override|vararg|typealias|expect|actual|yield|out|in|lateinit)\\b",
+          "match": "\\b(out|in|yield|typealias|override)\\b",
           "name": "storage.modifier.kotlin"
         },
         {
+          "match": "\\b(?<![+-/%*=(,]\\s)(inline|external|public|private|protected|internal|abstract|final|sealed|enum|open|annotation|expect|actual|const|lateinit)(?=\\s(?!(?:\\s*)(?:[+-/%*=:).,]|$)))\\b",
+          "name": "storage.modifier.kotlin",
+          "comment": "Soft modifiers"
+        },
+        {
+          "match": "\\b(vararg(?=\\s+\\w+:))\\b",
+          "name": "storage.modifier.kotlin",
+          "comment": "Soft modifier"
+        },
+        {
           "match": "\\b(suspend(?!\\s*[\\(]?\\s*\\{))\\b",
-          "name": "storage.modifier.kotlin"
+          "name": "storage.modifier.kotlin",
+          "comment": "Soft modifier"
         },
         {
           "match": "\\b(try|catch|finally|throw)\\b",

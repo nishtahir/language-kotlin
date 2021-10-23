@@ -1,8 +1,7 @@
 // SYNTAX TEST "source.kotlin" "Comments after field"
 
 data class A(
-//<---- storage.type.kotlin
-//   ^^^^^ meta.class.kotlin storage.modifier.kotlin
+// <---------- meta.class.kotlin storage.modifier.kotlin
 //         ^ meta.class.kotlin entity.name.class.kotlin
 //          ^ meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
   val field: Int  // This is a comment, when is not a keyword

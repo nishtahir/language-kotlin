@@ -427,7 +427,7 @@
 #             ^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                 ^ source.kotlin meta.function.kotlin
-#                  ^ source.kotlin keyword.operator.assignment.kotlin
+#                  ^ source.kotlin meta.function.kotlin keyword.operator.single-expression.kotlin
 #                   ^^^ source.kotlin
 #                      ^ source.kotlin keyword.operator.arithmetic.kotlin
 #                       ^ source.kotlin
@@ -447,7 +447,7 @@
 #             ^^^^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                   ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                    ^ source.kotlin meta.function.kotlin
-#                     ^ source.kotlin keyword.operator.assignment.kotlin
+#                     ^ source.kotlin meta.function.kotlin keyword.operator.single-expression.kotlin
 #                      ^^^ source.kotlin
 #                         ^^ source.kotlin keyword.operator.comparison.kotlin
 #                           ^ source.kotlin
@@ -748,7 +748,7 @@
 #                                                     ^^^ source.kotlin meta.function.kotlin meta.parameters.kotlin support.class.kotlin
 #                                                        ^ source.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                                                         ^ source.kotlin meta.function.kotlin
-#                                                          ^ source.kotlin keyword.operator.assignment.kotlin
+#                                                          ^ source.kotlin meta.function.kotlin keyword.operator.single-expression.kotlin
 #                                                           ^ source.kotlin
 #                                                            ^^^^^^ source.kotlin support.class.kotlin
 #                                                                  ^ source.kotlin punctuation.accessor.dot.kotlin
@@ -785,9 +785,7 @@
 #            ^ source.kotlin meta.class.kotlin
 #             ^^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
 >data class Const(val number: Double) : Expr()
-#^^^^ source.kotlin storage.type.kotlin
-#    ^ source.kotlin
-#     ^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
+#^^^^^^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
 #          ^ source.kotlin meta.class.kotlin
 #           ^^^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
 #                ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
@@ -802,9 +800,7 @@
 #                                           ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
 #                                            ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 >data class Sum(val e1: Expr, val e2: Expr) : Expr()
-#^^^^ source.kotlin storage.type.kotlin
-#    ^ source.kotlin
-#     ^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
+#^^^^^^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
 #          ^ source.kotlin meta.class.kotlin
 #           ^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
 #              ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
@@ -983,9 +979,7 @@
 >private data class Foo(
 #^^^^^^^ source.kotlin storage.modifier.kotlin
 #       ^ source.kotlin
-#        ^^^^ source.kotlin storage.type.kotlin
-#            ^ source.kotlin
-#             ^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
+#        ^^^^^^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
 #                  ^ source.kotlin meta.class.kotlin
 #                   ^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
 #                      ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
@@ -1020,9 +1014,7 @@
 #^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 >
 >data class Response(@SerializedName("param1") val param1: String,
-#^^^^ source.kotlin storage.type.kotlin
-#    ^ source.kotlin
-#     ^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
+#^^^^^^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin
 #          ^ source.kotlin meta.class.kotlin
 #           ^^^^^^^^ source.kotlin meta.class.kotlin entity.name.class.kotlin
 #                   ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin

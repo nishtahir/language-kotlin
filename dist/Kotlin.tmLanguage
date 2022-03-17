@@ -742,10 +742,6 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#parameters</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#code</string>
               </dict>
             </array>

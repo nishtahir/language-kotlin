@@ -45,6 +45,9 @@
           "name": "meta.class.kotlin",
           "patterns": [
             {
+              "include": "#keywords"
+            },
+            {
               "begin": "\\b((?:(?:data|value)\\s+)?class|(?:(?:fun|value)\\s+)?interface)\\b\\s+(\\w+)",
               "beginCaptures": {
                 "1": {

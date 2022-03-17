@@ -487,9 +487,6 @@
           "name": "meta.group.kotlin",
           "patterns": [
             {
-              "include": "#keyword-punctuation"
-            },
-            {
               "include": "#parameters"
             },
             {

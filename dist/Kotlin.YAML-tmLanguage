@@ -142,7 +142,6 @@ repository:
                     '0': {name: punctuation.section.group.end.kotlin}
                 name: meta.group.kotlin
                 patterns:
-                    - {include: '#keyword-punctuation'}
                     - {include: '#parameters'}
                     - {include: '#code'}
     braces:

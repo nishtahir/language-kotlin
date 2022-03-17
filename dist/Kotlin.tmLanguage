@@ -75,10 +75,6 @@
             <key>patterns</key>
             <array>
               <dict>
-                <key>include</key>
-                <string>#keyword</string>
-              </dict>
-              <dict>
                 <key>begin</key>
                 <string>\b((?:(?:data|value)\s+)?class|(?:(?:fun|value)\s+)?interface)\b\s+(\w+)</string>
                 <key>beginCaptures</key>

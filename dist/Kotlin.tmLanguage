@@ -76,7 +76,7 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#keyword</string>
+                <string>#keywords</string>
               </dict>
               <dict>
                 <key>begin</key>
@@ -742,14 +742,6 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#keyword-punctuation</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#parameters</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#code</string>
               </dict>
             </array>
@@ -837,10 +829,6 @@
           <dict>
             <key>include</key>
             <string>#comments</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#comments-inline</string>
           </dict>
           <dict>
             <key>include</key>

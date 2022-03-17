@@ -28,10 +28,6 @@ repository:
                 name: meta.group.kotlin
                 patterns:
                     -
-                        include: '#keyword-punctuation'
-                    -
-                        include: '#parameters'
-                    -
                         include: '#code'
     braces:
         patterns:
@@ -67,8 +63,6 @@ repository:
         patterns:
             -
                 include: '#comments'
-            -
-                include: '#comments-inline'
             -
                 include: '#annotations'
             -

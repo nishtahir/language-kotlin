@@ -45,7 +45,7 @@
           "name": "meta.class.kotlin",
           "patterns": [
             {
-              "include": "#keyword"
+              "include": "#keywords"
             },
             {
               "begin": "\\b((?:(?:data|value)\\s+)?class|(?:(?:fun|value)\\s+)?interface)\\b\\s+(\\w+)",
@@ -487,12 +487,6 @@
           "name": "meta.group.kotlin",
           "patterns": [
             {
-              "include": "#keyword-punctuation"
-            },
-            {
-              "include": "#parameters"
-            },
-            {
               "include": "#code"
             }
           ]
@@ -551,9 +545,6 @@
       "patterns": [
         {
           "include": "#comments"
-        },
-        {
-          "include": "#comments-inline"
         },
         {
           "include": "#annotations"

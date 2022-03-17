@@ -26,7 +26,7 @@ repository:
                 end: '(?=\}|$)'
                 name: meta.class.kotlin
                 patterns:
-                    - {include: '#keyword'}
+                    - {include: '#keywords'}
                     - {begin: '\b((?:(?:data|value)\s+)?class|(?:(?:fun|value)\s+)?interface)\b\s+(\w+)', beginCaptures: {'1': {name: storage.modifier.kotlin}, '2': {name: entity.name.class.kotlin}}, end: '(?=\(|\{|$)', patterns: [{include: '#comments'}, {include: '#annotations'}, {include: '#types'}]}
                     - {begin: (\(), beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}, '1': {name: punctuation.definition.parameters.begin.kotlin}}, end: (\)), endCaptures: {'0': {name: punctuation.section.group.end.kotlin}, '1': {name: punctuation.definition.parameters.end.kotlin}}, name: meta.parameters.kotlin, patterns: [{include: '#comments'}, {include: '#class-parameter-list'}]}
                     - {begin: '\{', beginCaptures: {'0': {name: punctuation.section.group.begin.kotlin}}, end: '\}', endCaptures: {'0': {name: punctuation.section.group.end.kotlin}}, name: meta.block.kotlin, patterns: [{include: '#code'}]}
@@ -142,8 +142,6 @@ repository:
                     '0': {name: punctuation.section.group.end.kotlin}
                 name: meta.group.kotlin
                 patterns:
-                    - {include: '#keyword-punctuation'}
-                    - {include: '#parameters'}
                     - {include: '#code'}
     braces:
         patterns:
@@ -173,8 +171,6 @@ repository:
         patterns:
             -
                 include: '#comments'
-            -
-                include: '#comments-inline'
             -
                 include: '#annotations'
             -

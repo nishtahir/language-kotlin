@@ -553,9 +553,6 @@
           "include": "#comments"
         },
         {
-          "include": "#comments-inline"
-        },
-        {
           "include": "#annotations"
         },
         {

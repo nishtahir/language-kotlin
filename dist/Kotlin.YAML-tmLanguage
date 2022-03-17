@@ -174,8 +174,6 @@ repository:
             -
                 include: '#comments'
             -
-                include: '#comments-inline'
-            -
                 include: '#annotations'
             -
                 include: '#parens'

@@ -156,3 +156,7 @@ object DefaultListener : MouseAdapter() {
 
     override fun mouseEntered(e: MouseEvent) { }
 }
+
+class Feature : Node("Title", "Content", "Description") {
+
+}

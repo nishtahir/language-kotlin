@@ -39,9 +39,9 @@ repository:
                         name: meta.parameters.kotlin
                         patterns:
                             -
-                                include: '#comments'
-                            -
                                 include: '#class-parameter-list'
+                            -
+                                include: '#comments'
                     -
                         begin: '\{'
                         beginCaptures:
@@ -76,3 +76,5 @@ repository:
                         name: punctuation.seperator.kotlin
                     -
                         include: '#types'
+                    -   
+                        include: '#literals'

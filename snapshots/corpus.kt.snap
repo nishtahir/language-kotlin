@@ -870,7 +870,8 @@
 #                                                                     ^ source.kotlin meta.class.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
 #                                                                      ^ source.kotlin meta.class.kotlin meta.parameters.kotlin
 #                                                                       ^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin support.class.kotlin
-#                                                                          ^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin
+#                                                                          ^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin
+#                                                                             ^^ source.kotlin meta.class.kotlin meta.parameters.kotlin constant.numeric.integer.kotlin
 #                                                                               ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.seperator.kotlin
 #                                                                                ^ source.kotlin meta.class.kotlin meta.parameters.kotlin
 #                                                                                 ^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin storage.type.kotlin
@@ -879,7 +880,10 @@
 #                                                                                               ^ source.kotlin meta.class.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
 #                                                                                                ^ source.kotlin meta.class.kotlin meta.parameters.kotlin
 #                                                                                                 ^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin support.class.kotlin
-#                                                                                                       ^^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin
+#                                                                                                       ^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin
+#                                                                                                          ^ source.kotlin meta.class.kotlin meta.parameters.kotlin string.quoted.double.kotlin punctuation.definition.string.begin.kotlin
+#                                                                                                           ^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.parameters.kotlin string.quoted.double.kotlin
+#                                                                                                                      ^ source.kotlin meta.class.kotlin meta.parameters.kotlin string.quoted.double.kotlin punctuation.definition.string.end.kotlin
 #                                                                                                                       ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 #                                                                                                                        ^^^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin
 #                                                                                                                                         ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin

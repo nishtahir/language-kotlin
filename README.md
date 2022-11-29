@@ -55,7 +55,7 @@ $ npm test
 
 ## Useful resources
 
-* [GitHub Lightshow](https://github-lightshow.herokuapp.com/) - Useful for testing Grammar sources against Code to inspect the highlighting behavior
+* [NovaLightshow](https://novalightshow.netlify.app/) - Useful for testing Grammar sources against Code to inspect the highlighting behavior. Thanks to [Nixinova](https://github.com/Nixinova/NovaLightshow)
 * [Sublime Text scope naming reference](https://www.sublimetext.com/docs/3/scope_naming.html) - Reference on Textmate scope naming
 
 

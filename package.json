@@ -16,17 +16,18 @@
     "build": "node scripts/build.js",
     "format": "node scripts/format.js",
     "coverage": "node scripts/coverage.js && npx codecov",
-    "snapshot": "npx vscode-tmgrammar-snap -s source.kotlin -g dist/Kotlin.tmLanguage -t \"snapshots/**/*.kt\"",
-    "grammar-test": "npx vscode-tmgrammar-test -s source.kotlin -g dist/Kotlin.tmLanguage -t \"test/**/*.test.kt\"",
+    "sample": "npx vscode-tmgrammar-snap --help",
+    "snapshot": "npx vscode-tmgrammar-snap -g dist/Kotlin.tmLanguage -s source.kotlin \"snapshots/**/*.kt\"",
+    "grammar-test": "npx vscode-tmgrammar-test -g dist/Kotlin.tmLanguage \"test/**/*.test.kt\"",
     "test": "npm run grammar-test && npm run snapshot"
   },
   "devDependencies": {
-    "codecov": "^3.8.0",
+    "codecov": "^3.8.3",
     "deepmerge": "^4.2.2",
     "format-json": "^1.0.3",
     "lcov-write": "^1.0.0",
-    "plist": "^3.0.4",
-    "vscode-tmgrammar-test": "^0.0.10",
+    "plist": "^3.0.6",
+    "vscode-tmgrammar-test": "^0.1.1",
     "yaml": "^1.10.0",
     "yaml-source-map": "^2.1.1",
     "yamljs": "^0.3.0"

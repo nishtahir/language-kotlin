@@ -5,11 +5,10 @@ const {
     getAllFilesInDir,
     readFileSync
 } = require("./util");
-const {
-    parseGrammarTestCase,
-    runGrammarTestCase,
-    createRegistry
-} = require("vscode-tmgrammar-test/dist/src/unit/index");
+
+const { parseGrammarTestCase, runGrammarTestCase } = require("vscode-tmgrammar-test/dist/unit/index");
+const { createRegistry } = require("vscode-tmgrammar-test/dist/common/index");
+
 const lcovWrite = require("lcov-write");
 const Yaml = require('yaml');
 const YamlSourceMap = require('yaml-source-map');
@@ -42,7 +41,7 @@ generateCoverageReports(appSources, testSources, instrumentedSourcePath);
  * @param {string} instrumentedSourcePath instrumented compiled source
  */
 async function generateCoverageReports(appSources, testSources, instrumentedSourcePath) {
-    const registry = createRegistry([instrumentedSourcePath]);
+    const registry = createRegistry([{ path: instrumentedSourcePath, language: "kotlin" }]);
     const scopesHit = await runTestCases(registry, testSources);
 
     const allHits = Object.values(scopesHit)
@@ -121,9 +120,28 @@ async function generateCoverageReports(appSources, testSources, instrumentedSour
         coverageData.push(coverage);
     });
 
+    printCoverageSummary(coverageData);
+    writeCoverageReportToLcov(coverageData);
+}
+
+/**
+ * @param {*} coverageData 
+ */
+function printCoverageSummary(coverageData) {
+    coverageData.forEach(({title, lines}) => {
+        const lineCoveragePercent = ((lines.hit / lines.found) * 100).toFixed(2);
+        console.log(`${title}\nLine coverage: ${lineCoveragePercent}%\n`);
+    });
+}
+
+/**
+ * 
+ * @param coverageData - coverage report to serialize to LCOV
+ */
+function writeCoverageReportToLcov(coverageData, outputFile = "coverage.lcov") {
     // Write coverage data to file
     const coverageSource = lcovWrite.stringify(coverageData);
-    safeWriteFileSync(path.resolve(buildDir, "coverage.lcov"), coverageSource);
+    safeWriteFileSync(path.resolve(buildDir, outputFile), coverageSource);
 }
 
 /**

@@ -92,10 +92,10 @@
               "name": "meta.parameters.kotlin",
               "patterns": [
                 {
-                  "include": "#comments"
+                  "include": "#class-parameter-list"
                 },
                 {
-                  "include": "#class-parameter-list"
+                  "include": "#comments"
                 }
               ]
             },
@@ -151,6 +151,9 @@
             },
             {
               "include": "#types"
+            },
+            {
+              "include": "#literals"
             }
           ]
         }

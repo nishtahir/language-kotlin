@@ -149,11 +149,11 @@
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#comments</string>
+                    <string>#class-parameter-list</string>
                   </dict>
                   <dict>
                     <key>include</key>
-                    <string>#class-parameter-list</string>
+                    <string>#comments</string>
                   </dict>
                 </array>
               </dict>
@@ -235,6 +235,10 @@
               <dict>
                 <key>include</key>
                 <string>#types</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#literals</string>
               </dict>
             </array>
           </dict>

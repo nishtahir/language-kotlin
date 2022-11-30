@@ -160,3 +160,7 @@ object DefaultListener : MouseAdapter() {
 class Feature : Node("Title", "Content", "Description") {
 
 }
+
+class Outer {
+    inner class Inner {}
+}

@@ -1200,7 +1200,7 @@
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#string-content</string>
+                    <string>#raw-string-content</string>
                   </dict>
                 </array>
               </dict>
@@ -1269,6 +1269,49 @@
             </array>
             <key>repository</key>
             <dict>
+              <key>raw-string-content</key>
+              <dict>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>begin</key>
+                    <string>\$(\{)</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                      <key>1</key>
+                      <dict>
+                        <key>name</key>
+                        <string>punctuation.section.block.begin.kotlin</string>
+                      </dict>
+                    </dict>
+                    <key>end</key>
+                    <string>\}</string>
+                    <key>endCaptures</key>
+                    <dict>
+                      <key>0</key>
+                      <dict>
+                        <key>name</key>
+                        <string>punctuation.section.block.end.kotlin</string>
+                      </dict>
+                    </dict>
+                    <key>name</key>
+                    <string>entity.string.template.element.kotlin</string>
+                    <key>patterns</key>
+                    <array>
+                      <dict>
+                        <key>include</key>
+                        <string>#code</string>
+                      </dict>
+                    </array>
+                  </dict>
+                  <dict>
+                    <key>match</key>
+                    <string>\$[a-zA-Z_]\w*</string>
+                    <key>name</key>
+                    <string>entity.string.template.element.kotlin</string>
+                  </dict>
+                </array>
+              </dict>
               <key>string-content</key>
               <dict>
                 <key>patterns</key>

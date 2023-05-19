@@ -1,5 +1,3 @@
-# remove match to original master branch
-
 repository:
     class-ident:
         patterns:

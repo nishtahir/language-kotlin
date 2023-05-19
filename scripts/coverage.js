@@ -1,3 +1,14 @@
+/**
+ * This script generates a naive coverage report for the Kotlin.tmlanguage file.
+ * It is used to ensure that all scopes are tested.
+ * 
+ * The script works by instrumenting the compiled Kotlin.tmlanguage file with
+ * coverage tracking scopes. It then runs all tests against the instrumented file
+ * and generates a coverage report.
+ * 
+ * It does not consider the inner structure of the scopes, only that they are hit.
+ */
+
 const path = require("path");
 const plist = require("plist");
 const {

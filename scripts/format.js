@@ -1,3 +1,8 @@
+/**
+ * This script formats all YAML files in the src/ directory.
+ * It is used to ensure a consistent code style.
+ */
+
 const fs = require("fs");
 const path = require("path");
 const yaml = require("yamljs");

@@ -13,13 +13,14 @@
     "url": "https://github.com/nishtahir/language-kotlin/issues"
   },
   "scripts": {
-    "build": "node scripts/build.js",
+    "build:snapshot": "npx vscode-tmgrammar-snap -u -g dist/Kotlin.tmLanguage -s source.kotlin \"snapshots/**/*.kt\"",
+    "build:grammar": "node scripts/build.js",
+    "build": "npm run build:grammar && npm run build:snapshot",
     "format": "node scripts/format.js",
     "coverage": "node scripts/coverage.js && npx codecov",
-    "sample": "npx vscode-tmgrammar-snap --help",
-    "snapshot": "npx vscode-tmgrammar-snap -g dist/Kotlin.tmLanguage -s source.kotlin \"snapshots/**/*.kt\"",
-    "grammar-test": "npx vscode-tmgrammar-test -g dist/Kotlin.tmLanguage \"test/**/*.test.kt\"",
-    "test": "npm run grammar-test && npm run snapshot"
+    "test:snapshot": "npx vscode-tmgrammar-snap -g dist/Kotlin.tmLanguage -s source.kotlin \"snapshots/**/*.kt\"",
+    "test:grammar": "npx vscode-tmgrammar-test -g dist/Kotlin.tmLanguage \"test/**/*.test.kt\"",
+    "test": "npm run test:grammar && npm run test:snapshot"
   },
   "devDependencies": {
     "codecov": "^3.8.3",

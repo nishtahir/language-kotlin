@@ -1,3 +1,11 @@
+/**
+ * This script is used to generate the final syntax files from the source files.
+ * It merges all source files into a single file and generates the final syntax files.
+ * - Kotlin.JSON-tmLanguage
+ * - Kotlin.YAML-tmLanguage
+ * - Kotlin.tmLanguage
+ */
+
 const fs = require("fs");
 const path = require("path");
 const plist = require("plist");

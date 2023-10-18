@@ -18,6 +18,7 @@
     "build": "npm run build:grammar && npm run build:snapshot",
     "format": "node scripts/format.js",
     "coverage": "node scripts/coverage.js && npx codecov",
+    "prettier": "prettier --write .",
     "test:snapshot": "npx vscode-tmgrammar-snap -g dist/Kotlin.tmLanguage -s source.kotlin \"snapshots/**/*.kt\"",
     "test:grammar": "npx vscode-tmgrammar-test -g dist/Kotlin.tmLanguage \"test/**/*.test.kt\"",
     "test": "npm run test:grammar && npm run test:snapshot"
@@ -28,6 +29,7 @@
     "format-json": "^1.0.3",
     "lcov-write": "^1.0.0",
     "plist": "^3.0.6",
+    "prettier": "^3.0.3",
     "vscode-tmgrammar-test": "^0.1.1",
     "yaml": "^1.10.0",
     "yaml-source-map": "^2.1.1",

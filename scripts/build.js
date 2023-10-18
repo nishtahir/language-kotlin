@@ -41,13 +41,13 @@ if (!fs.existsSync(destDir)) {
 console.log("Generating Json file...");
 fs.writeFileSync(
   path.resolve(destDir, "Kotlin.JSON-tmLanguage"),
-  json.plain(data)
+  json.plain(data),
 );
 
 console.log("Generating Yaml file...");
 fs.writeFileSync(
   path.resolve(destDir, "Kotlin.YAML-tmLanguage"),
-  yaml.stringify(data, 6)
+  yaml.stringify(data, 6),
 );
 
 console.log("Generating Xml file...");

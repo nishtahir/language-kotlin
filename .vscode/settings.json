@@ -1,0 +1,6 @@
+{
+  "editor.fontLigatures": false,
+  "files.associations": {
+    "*.YAML-tmLanguage": "yaml"
+  }
+}

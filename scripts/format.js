@@ -11,7 +11,6 @@ const sourceDirPath = path.resolve(__dirname, "../", "src/");
 const sourceFiles = fs.readdirSync(sourceDirPath);
 
 sourceFiles.forEach((file) => {
-
   const filePath = path.resolve(sourceDirPath, file);
   console.log("Formatting " + filePath);
 

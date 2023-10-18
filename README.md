@@ -16,11 +16,11 @@ $ npm install
 
 ## Build
 
-Changes to the grammar should be made in the `src` folder. These are merged at build 
+Changes to the grammar should be made in the `src` folder. These are merged at build
 time and used to produce the final artifact.
 
-Once you are satisfied with your changes, you will need to generate 
-`xml` and `json` variants for distribution. 
+Once you are satisfied with your changes, you will need to generate
+`xml` and `json` variants for distribution.
 There's a handy build script available to automate this process.
 
 ```
@@ -41,7 +41,7 @@ $ npm run format
 
 > All changes to the grammar must be accompanied by tests covering relevant scopes.
 
-Tests are run using [`vscode-tmgrammar-test`](https://github.com/PanAeon/vscode-tmgrammar-test). 
+Tests are run using [`vscode-tmgrammar-test`](https://github.com/PanAeon/vscode-tmgrammar-test).
 Test cases and regression tests are available in the `/test` folder.
 
 Generated snapshots are available in the `/snapshots` folder and should be updated with changes
@@ -55,9 +55,8 @@ $ npm test
 
 ## Useful resources
 
-* [NovaLightshow](https://novalightshow.netlify.app/) - Useful for testing Grammar sources against Code to inspect the highlighting behavior. Thanks to [Nixinova](https://github.com/Nixinova/NovaLightshow)
-* [Sublime Text scope naming reference](https://www.sublimetext.com/docs/3/scope_naming.html) - Reference on Textmate scope naming
-
+- [NovaLightshow](https://novalightshow.netlify.app/) - Useful for testing Grammar sources against Code to inspect the highlighting behavior. Thanks to [Nixinova](https://github.com/Nixinova/NovaLightshow)
+- [Sublime Text scope naming reference](https://www.sublimetext.com/docs/3/scope_naming.html) - Reference on Textmate scope naming
 
 ## Code of Conduct
 

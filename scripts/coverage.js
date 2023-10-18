@@ -1,28 +1,27 @@
 /**
  * This script generates a naive coverage report for the Kotlin.tmlanguage file.
  * It is used to ensure that all scopes are tested.
- * 
+ *
  * The script works by instrumenting the compiled Kotlin.tmlanguage file with
  * coverage tracking scopes. It then runs all tests against the instrumented file
  * and generates a coverage report.
- * 
+ *
  * It does not consider the inner structure of the scopes, only that they are hit.
  */
 
 const path = require("path");
 const plist = require("plist");
-const {
-    safeWriteFileSync,
-    getAllFilesInDir,
-    readFileSync
-} = require("./util");
+const { safeWriteFileSync, getAllFilesInDir, readFileSync } = require("./util");
 
-const { parseGrammarTestCase, runGrammarTestCase } = require("vscode-tmgrammar-test/dist/unit/index");
+const {
+  parseGrammarTestCase,
+  runGrammarTestCase,
+} = require("vscode-tmgrammar-test/dist/unit/index");
 const { createRegistry } = require("vscode-tmgrammar-test/dist/common/index");
 
 const lcovWrite = require("lcov-write");
-const Yaml = require('yaml');
-const YamlSourceMap = require('yaml-source-map');
+const Yaml = require("yaml");
+const YamlSourceMap = require("yaml-source-map");
 
 const distDir = path.resolve(__dirname, "../", "dist/");
 const buildDir = path.resolve(__dirname, "../", "build/");
@@ -51,108 +50,116 @@ generateCoverageReports(appSources, testSources, instrumentedSourcePath);
  * @param {Array<string>} testSources test sources to test coverage
  * @param {string} instrumentedSourcePath instrumented compiled source
  */
-async function generateCoverageReports(appSources, testSources, instrumentedSourcePath) {
-    const registry = createRegistry([{ path: instrumentedSourcePath, language: "kotlin" }]);
-    const scopesHit = await runTestCases(registry, testSources);
+async function generateCoverageReports(
+  appSources,
+  testSources,
+  instrumentedSourcePath,
+) {
+  const registry = createRegistry([
+    { path: instrumentedSourcePath, language: "kotlin" },
+  ]);
+  const scopesHit = await runTestCases(registry, testSources);
 
-    const allHits = Object.values(scopesHit)
-        .flat()
-        .filter((hit) => hit !== 'source.kotlin')
-        .map((hit) => hit.endsWith(".name") ? hit.slice(0, -5) : hit);
+  const allHits = Object.values(scopesHit)
+    .flat()
+    .filter((hit) => hit !== "source.kotlin")
+    .map((hit) => (hit.endsWith(".name") ? hit.slice(0, -5) : hit));
 
-    const sourceMap = new YamlSourceMap()
+  const sourceMap = new YamlSourceMap();
 
-    // Index application sources
-    const indexedSources = appSources.map((sourceFile) => {
-        const sourceContent = readFileSync(sourceFile);
-        const document = Yaml.parseDocument(sourceContent, { keepCstNodes: true });
-        return {
-            source: document.toJSON(),
-            index: sourceMap.index(document, { filename: sourceFile }),
-            filename: sourceFile
-        };
-    });
+  // Index application sources
+  const indexedSources = appSources.map((sourceFile) => {
+    const sourceContent = readFileSync(sourceFile);
+    const document = Yaml.parseDocument(sourceContent, { keepCstNodes: true });
+    return {
+      source: document.toJSON(),
+      index: sourceMap.index(document, { filename: sourceFile }),
+      filename: sourceFile,
+    };
+  });
 
-    const coverageData = [];
+  const coverageData = [];
 
-    // Find match all hits in sources
-    indexedSources.forEach(indexedSource => {
-        const { source, index, filename } = indexedSource;
-        const coverage = createCoverageData(filename);
+  // Find match all hits in sources
+  indexedSources.forEach((indexedSource) => {
+    const { source, index, filename } = indexedSource;
+    const coverage = createCoverageData(filename);
 
-        const lineData = {};
+    const lineData = {};
 
-        // Seed lineData with testable lines.
-        // this includes anything that has a scope
-        findScopes(source)
-            .map((path) => path.slice(0, -1))
-            .map((path) => sourceMap.lookup(path, index))
-            .forEach((line) => {
-                const start = line.start.line;
-                const end = line.end.line;
-                // End is not inclusive
-                for (let i = start; i < end; i++) {
-                    if (!lineData[i]) {
-                        lineData[i] = 0;
-                    }
-                }
-            });
-
-        // We now know how many lines we can test
-        coverage.lines.found = Object.keys(lineData).length;
-
-        allHits.forEach((hit) => {
-            const mapping = sourceMap.lookup(hit.split('.'), index);
-            if (mapping) {
-                const start = mapping.start.line;
-                const end = mapping.end.line;
-                // End is not inclusive
-                for (let i = start; i < end; i++) {
-                    lineData[i]++;
-                }
-            }
-        });
-
-        // Count lines that have at least 1 hit 
-        coverage.lines.hit = Object.values(lineData).filter((value) => value > 0).length;
-
-        // Associate hit count and line numbers
-        // for coverage report
-        for (const lineNum in lineData) {
-            if (lineData.hasOwnProperty(lineNum)) {
-                const hits = lineData[lineNum];
-                coverage.lines.details.push({
-                    line: lineNum,
-                    hit: hits
-                });
-            }
+    // Seed lineData with testable lines.
+    // this includes anything that has a scope
+    findScopes(source)
+      .map((path) => path.slice(0, -1))
+      .map((path) => sourceMap.lookup(path, index))
+      .forEach((line) => {
+        const start = line.start.line;
+        const end = line.end.line;
+        // End is not inclusive
+        for (let i = start; i < end; i++) {
+          if (!lineData[i]) {
+            lineData[i] = 0;
+          }
         }
+      });
 
-        coverageData.push(coverage);
+    // We now know how many lines we can test
+    coverage.lines.found = Object.keys(lineData).length;
+
+    allHits.forEach((hit) => {
+      const mapping = sourceMap.lookup(hit.split("."), index);
+      if (mapping) {
+        const start = mapping.start.line;
+        const end = mapping.end.line;
+        // End is not inclusive
+        for (let i = start; i < end; i++) {
+          lineData[i]++;
+        }
+      }
     });
 
-    printCoverageSummary(coverageData);
-    writeCoverageReportToLcov(coverageData);
+    // Count lines that have at least 1 hit
+    coverage.lines.hit = Object.values(lineData).filter(
+      (value) => value > 0,
+    ).length;
+
+    // Associate hit count and line numbers
+    // for coverage report
+    for (const lineNum in lineData) {
+      if (lineData.hasOwnProperty(lineNum)) {
+        const hits = lineData[lineNum];
+        coverage.lines.details.push({
+          line: lineNum,
+          hit: hits,
+        });
+      }
+    }
+
+    coverageData.push(coverage);
+  });
+
+  printCoverageSummary(coverageData);
+  writeCoverageReportToLcov(coverageData);
 }
 
 /**
- * @param {*} coverageData 
+ * @param {*} coverageData
  */
 function printCoverageSummary(coverageData) {
-    coverageData.forEach(({title, lines}) => {
-        const lineCoveragePercent = ((lines.hit / lines.found) * 100).toFixed(2);
-        console.log(`${title}\nLine coverage: ${lineCoveragePercent}%\n`);
-    });
+  coverageData.forEach(({ title, lines }) => {
+    const lineCoveragePercent = ((lines.hit / lines.found) * 100).toFixed(2);
+    console.log(`${title}\nLine coverage: ${lineCoveragePercent}%\n`);
+  });
 }
 
 /**
- * 
+ *
  * @param coverageData - coverage report to serialize to LCOV
  */
 function writeCoverageReportToLcov(coverageData, outputFile = "coverage.lcov") {
-    // Write coverage data to file
-    const coverageSource = lcovWrite.stringify(coverageData);
-    safeWriteFileSync(path.resolve(buildDir, outputFile), coverageSource);
+  // Write coverage data to file
+  const coverageSource = lcovWrite.stringify(coverageData);
+  safeWriteFileSync(path.resolve(buildDir, outputFile), coverageSource);
 }
 
 /**
@@ -160,25 +167,25 @@ function writeCoverageReportToLcov(coverageData, outputFile = "coverage.lcov") {
  * @param {string} filename filename of the file undertest
  */
 function createCoverageData(filename) {
-    return {
-        title: filename,
-        file: filename,
-        functions: {
-            hit: 0,
-            found: 0,
-            details: []
-        },
-        branches: {
-            hit: 0,
-            found: 0,
-            details: []
-        },
-        lines: {
-            hit: 0,
-            found: 0,
-            details: []
-        }
-    };
+  return {
+    title: filename,
+    file: filename,
+    functions: {
+      hit: 0,
+      found: 0,
+      details: [],
+    },
+    branches: {
+      hit: 0,
+      found: 0,
+      details: [],
+    },
+    lines: {
+      hit: 0,
+      found: 0,
+      details: [],
+    },
+  };
 }
 
 /**
@@ -188,14 +195,14 @@ function createCoverageData(filename) {
  * @returns {object} map of file to scopes that were hit.
  */
 async function runTestCases(registry, testSources) {
-    let scopesHit = {};
-    for (let i = 0; i < testSources.length; i++) {
-        const file = testSources[i];
-        const results = await runSingleTestCase(registry, file);
-        const actualScopesFound = results.map((result) => result.actual).flat();
-        scopesHit[file] = actualScopesFound;
-    }
-    return scopesHit;
+  let scopesHit = {};
+  for (let i = 0; i < testSources.length; i++) {
+    const file = testSources[i];
+    const results = await runSingleTestCase(registry, file);
+    const actualScopesFound = results.map((result) => result.actual).flat();
+    scopesHit[file] = actualScopesFound;
+  }
+  return scopesHit;
 }
 
 /**
@@ -204,8 +211,8 @@ async function runTestCases(registry, testSources) {
  * @param {string} file - path to file to test
  */
 async function runSingleTestCase(registry, file) {
-    const testCase = parseGrammarTestCase(readFileSync(file));
-    return await runGrammarTestCase(registry, testCase);
+  const testCase = parseGrammarTestCase(readFileSync(file));
+  return await runGrammarTestCase(registry, testCase);
 }
 
 /**
@@ -215,59 +222,59 @@ async function runSingleTestCase(registry, file) {
  * @param {Array<string>} qualifiedPath - current path to the object
  */
 function findScopes(obj, qualifiedPath = []) {
-    let scopes = [];
-    for (let key in obj) {
-        const value = obj[key];
-        const scopedQualifiedPath = [...qualifiedPath, key];
-        if (typeof value === "object") {
-            scopes = scopes.concat(findScopes(value, scopedQualifiedPath));
-        } else {
-            if (key === "name") {
-                scopes.push(scopedQualifiedPath);
-            }
-        }
+  let scopes = [];
+  for (let key in obj) {
+    const value = obj[key];
+    const scopedQualifiedPath = [...qualifiedPath, key];
+    if (typeof value === "object") {
+      scopes = scopes.concat(findScopes(value, scopedQualifiedPath));
+    } else {
+      if (key === "name") {
+        scopes.push(scopedQualifiedPath);
+      }
     }
-    return scopes;
+  }
+  return scopes;
 }
 
 /**
  * Instruments a given scope tree by replacing its named scopes
  * with debug scope names for coverage tracking. Names are uniquely determined
  * by generating a fully qualified path to the scope.
- * 
+ *
  * @param {object} scopesTree - tree to instrument
  */
 function instrumentScopesTree(scopesTree) {
-    let probeCount = 0;
+  let probeCount = 0;
 
-    /**
-     * Recursively inserts coverage tracking probes into a given 
-     * tmlanguage scope tree. 
-     * Nested to keep the outer function pure.
-     * @param {object} obj - tree to instrument
-     * @param {arr} qualifiedPath qualified path of the current scopes if this is nested
-     */
-    function insertProbes(obj, qualifiedPath = []) {
-        for (let key in obj) {
-            const value = obj[key];
-            const scopedQualifiedPath = [...qualifiedPath, key];
-            if (typeof value === "object") {
-                insertProbes(obj[key], scopedQualifiedPath);
-            } else {
-                if (key === 'name') {
-                    const qualifiedPathStr = scopedQualifiedPath.join('.');
-                    obj[key] = qualifiedPathStr;
-                    probeCount++;
-                }
-            }
+  /**
+   * Recursively inserts coverage tracking probes into a given
+   * tmlanguage scope tree.
+   * Nested to keep the outer function pure.
+   * @param {object} obj - tree to instrument
+   * @param {arr} qualifiedPath qualified path of the current scopes if this is nested
+   */
+  function insertProbes(obj, qualifiedPath = []) {
+    for (let key in obj) {
+      const value = obj[key];
+      const scopedQualifiedPath = [...qualifiedPath, key];
+      if (typeof value === "object") {
+        insertProbes(obj[key], scopedQualifiedPath);
+      } else {
+        if (key === "name") {
+          const qualifiedPathStr = scopedQualifiedPath.join(".");
+          obj[key] = qualifiedPathStr;
+          probeCount++;
         }
+      }
     }
+  }
 
-    // Mutate the tree inserting coverage scopes
-    insertProbes(scopesTree);
+  // Mutate the tree inserting coverage scopes
+  insertProbes(scopesTree);
 
-    return {
-        probesInserted: probeCount,
-        scopesTree
-    }
+  return {
+    probesInserted: probeCount,
+    scopesTree,
+  };
 }

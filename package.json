@@ -5,6 +5,7 @@
   "author": "Nish Tahir",
   "license": "Apache-2.0",
   "homepage": "https://github.com/nishtahir/language-kotlin#readme",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nishtahir/language-kotlin.git"

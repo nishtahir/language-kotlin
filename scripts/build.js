@@ -6,13 +6,13 @@
  * - Kotlin.tmLanguage
  */
 
-const fs = require("fs");
-const path = require("path");
-const plist = require("plist");
-const json = require("format-json");
-const yaml = require("yamljs");
-const deepmerge = require("deepmerge");
-const { safeWriteFileSync } = require("./util");
+import fs from "fs";
+import path from "path";
+import plist from "plist";
+import json from "format-json";
+import yaml from "yamljs";
+import deepmerge from "deepmerge";
+import { __dirname, safeWriteFileSync } from "./util.js";
 
 const SOURCE_PATH = path.resolve(__dirname, "../", "src/");
 const OUTPUT_PATH = path.resolve(__dirname, "../dist/");

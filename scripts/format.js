@@ -3,18 +3,19 @@
  * It is used to ensure a consistent code style.
  */
 
-const fs = require("fs");
-const path = require("path");
-const yaml = require("yamljs");
+import path from "path";
+import yaml from "yamljs";
+import { readdirSync, readFileSync, writeFileSync } from "fs";
+import { __dirname } from "./util.js";
 
 const sourceDirPath = path.resolve(__dirname, "../", "src/");
-const sourceFiles = fs.readdirSync(sourceDirPath);
+const sourceFiles = readdirSync(sourceDirPath);
 
 sourceFiles.forEach((file) => {
   const filePath = path.resolve(sourceDirPath, file);
   console.log("Formatting " + filePath);
 
-  const source = fs.readFileSync(filePath, "utf8");
+  const source = readFileSync(filePath, "utf8");
   if (source.trim().length === 0) {
     return; // skip empty files
   }
@@ -24,5 +25,5 @@ sourceFiles.forEach((file) => {
     indent: 2,
     indentSeq: true,
   });
-  fs.writeFileSync(filePath, yamlData);
+  writeFileSync(filePath, yamlData);
 });

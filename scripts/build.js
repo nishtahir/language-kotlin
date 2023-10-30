@@ -12,11 +12,13 @@ const plist = require("plist");
 const json = require("format-json");
 const yaml = require("yamljs");
 const deepmerge = require("deepmerge");
+const { safeWriteFileSync } = require("./util");
 
-const sourcePath = path.resolve(__dirname, "../", "src/");
+const SOURCE_PATH = path.resolve(__dirname, "../", "src/");
+const OUTPUT_PATH = path.resolve(__dirname, "../dist/");
 
-const data = fs.readdirSync(sourcePath).reduce((acc, file) => {
-  const filePath = path.resolve(sourcePath, file);
+const data = fs.readdirSync(SOURCE_PATH).reduce((acc, file) => {
+  const filePath = path.resolve(SOURCE_PATH, file);
   try {
     const source = fs.readFileSync(filePath, "utf8");
     // skip empty files
@@ -33,23 +35,18 @@ const data = fs.readdirSync(sourcePath).reduce((acc, file) => {
   }
 }, {});
 
-const destDir = path.resolve(__dirname, "../dist/");
-if (!fs.existsSync(destDir)) {
-  fs.mkdirSync(destDir);
-}
-
 console.log("Generating Json file...");
-fs.writeFileSync(
-  path.resolve(destDir, "Kotlin.JSON-tmLanguage"),
+safeWriteFileSync(
+  path.resolve(OUTPUT_PATH, "Kotlin.JSON-tmLanguage"),
   json.plain(data),
 );
 
 console.log("Generating Yaml file...");
-fs.writeFileSync(
-  path.resolve(destDir, "Kotlin.YAML-tmLanguage"),
+safeWriteFileSync(
+  path.resolve(OUTPUT_PATH, "Kotlin.YAML-tmLanguage"),
   yaml.stringify(data, 6),
 );
 
 console.log("Generating Xml file...");
 const xmlData = plist.build(data);
-fs.writeFileSync(path.resolve(destDir, "Kotlin.tmLanguage"), xmlData);
+safeWriteFileSync(path.resolve(OUTPUT_PATH, "Kotlin.tmLanguage"), xmlData);

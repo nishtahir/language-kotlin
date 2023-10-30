@@ -1,11 +1,15 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = path.dirname(__filename);
 
 /**
  * Read a file from a given path
  * @param {string} path file to read
  */
-function readFileSync(path) {
+export function readFileSync(path) {
   return fs.readFileSync(path, "utf8");
 }
 
@@ -15,7 +19,7 @@ function readFileSync(path) {
  * @param {string} dest
  * @param {string} content
  */
-function safeWriteFileSync(dest, content) {
+export function safeWriteFileSync(dest, content) {
   const dir = dest.substring(0, dest.lastIndexOf("/") + 1);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
@@ -28,7 +32,7 @@ function safeWriteFileSync(dest, content) {
  * @param {string} dirPath - path to directory
  * @param {Array<string>} files - files in parent directory
  */
-function getAllFilesInDir(dirPath, files = []) {
+export function getAllFilesInDir(dirPath, files = []) {
   fs.readdirSync(dirPath).forEach((file) => {
     if (fs.statSync(dirPath + "/" + file).isDirectory()) {
       files = getAllFilesInDir(dirPath + "/" + file, files);
@@ -38,9 +42,3 @@ function getAllFilesInDir(dirPath, files = []) {
   });
   return files;
 }
-
-module.exports = {
-  safeWriteFileSync,
-  getAllFilesInDir,
-  readFileSync,
-};

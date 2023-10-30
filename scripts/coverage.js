@@ -9,19 +9,24 @@
  * It does not consider the inner structure of the scopes, only that they are hit.
  */
 
-const path = require("path");
-const plist = require("plist");
-const { safeWriteFileSync, getAllFilesInDir, readFileSync } = require("./util");
+import path from "path";
+import plist from "plist";
+import {
+  __dirname,
+  safeWriteFileSync,
+  getAllFilesInDir,
+  readFileSync,
+} from "./util.js";
 
-const {
+import {
   parseGrammarTestCase,
   runGrammarTestCase,
-} = require("vscode-tmgrammar-test/dist/unit/index");
-const { createRegistry } = require("vscode-tmgrammar-test/dist/common/index");
+} from "vscode-tmgrammar-test/dist/unit/index.js";
+import { createRegistry } from "vscode-tmgrammar-test/dist/common/index.js";
 
-const lcovWrite = require("lcov-write");
-const Yaml = require("yaml");
-const YamlSourceMap = require("yaml-source-map");
+import lcovWrite from "lcov-write";
+import Yaml from "yaml";
+import YamlSourceMap from "yaml-source-map";
 
 const distDir = path.resolve(__dirname, "../", "dist/");
 const buildDir = path.resolve(__dirname, "../", "build/");

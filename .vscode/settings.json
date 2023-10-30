@@ -1,6 +1,7 @@
 {
   "editor.fontLigatures": false,
   "files.associations": {
-    "*.YAML-tmLanguage": "yaml"
+    "*.YAML-tmLanguage": "yaml",
+    "*.JSON-tmLanguage": "json"
   }
 }

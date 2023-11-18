@@ -33,3 +33,7 @@
   })
 //^ meta.group.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
 // ^ meta.group.kotlin punctuation.section.group.end.kotlin
+
+data object Foo
+// <------- source.kotlin meta.class.kotlin storage.modifier.kotlin
+//          ^^^ source.kotlin meta.class.kotlin

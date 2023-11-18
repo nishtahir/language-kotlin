@@ -823,15 +823,10 @@
 #                                                 ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
 #                                                  ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 >object NotANumber : Expr()
-#^^^^^^ source.kotlin storage.type.kotlin
-#      ^ source.kotlin
-#       ^^^^^^^^^^ source.kotlin entity.name.type.class.kotlin
-#                 ^ source.kotlin
-#                  ^ source.kotlin keyword.operator.declaration.kotlin
-#                   ^ source.kotlin
-#                    ^^^^ source.kotlin entity.name.type.class.kotlin
-#                        ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
-#                         ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
+#^^^^^^ source.kotlin meta.class.kotlin storage.type.kotlin
+#      ^^^^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin
+#                        ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
+#                         ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
 >// #endregion
 #^^ source.kotlin punctuation.definition.comment.kotlin comment.line.double-slash.kotlin
 #  ^^^^^^^^^^^^ source.kotlin punctuation.definition.comment.kotlin
@@ -1074,54 +1069,49 @@
 #^ source.kotlin meta.class.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
 >
 >object DefaultListener : MouseAdapter() {
-#^^^^^^ source.kotlin storage.type.kotlin
-#      ^ source.kotlin
-#       ^^^^^^^^^^^^^^^ source.kotlin entity.name.type.class.kotlin
-#                      ^ source.kotlin
-#                       ^ source.kotlin keyword.operator.declaration.kotlin
-#                        ^ source.kotlin
-#                         ^^^^^^^^^^^^ source.kotlin entity.name.type.class.kotlin
-#                                     ^ source.kotlin meta.group.kotlin punctuation.section.group.begin.kotlin
-#                                      ^ source.kotlin meta.group.kotlin punctuation.section.group.end.kotlin
-#                                       ^ source.kotlin
-#                                        ^ source.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
+#^^^^^^ source.kotlin meta.class.kotlin storage.type.kotlin
+#      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.kotlin meta.class.kotlin
+#                                     ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
+#                                      ^ source.kotlin meta.class.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
+#                                       ^ source.kotlin meta.class.kotlin
+#                                        ^ source.kotlin meta.class.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
 >    override fun mouseClicked(e: MouseEvent) { }
-#^^^^ source.kotlin meta.block.kotlin
-#    ^^^^^^^^ source.kotlin meta.block.kotlin storage.modifier.kotlin
-#            ^ source.kotlin meta.block.kotlin
-#             ^^^ source.kotlin meta.block.kotlin meta.function.kotlin keyword.other.kotlin
-#                ^ source.kotlin meta.block.kotlin meta.function.kotlin
-#                 ^^^^^^^^^^^^ source.kotlin meta.block.kotlin meta.function.kotlin entity.name.function.kotlin
-#                             ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
-#                              ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin variable.parameter.function.kotlin
-#                               ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
-#                                ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin
-#                                 ^^^^^^^^^^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin entity.name.type.class.kotlin
-#                                           ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
-#                                            ^ source.kotlin meta.block.kotlin meta.function.kotlin
-#                                             ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
-#                                              ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin
-#                                               ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
+#^^^^ source.kotlin meta.class.kotlin meta.block.kotlin
+#    ^^^^^^^^ source.kotlin meta.class.kotlin meta.block.kotlin storage.modifier.kotlin
+#            ^ source.kotlin meta.class.kotlin meta.block.kotlin
+#             ^^^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin keyword.other.kotlin
+#                ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin
+#                 ^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin entity.name.function.kotlin
+#                             ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
+#                              ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin variable.parameter.function.kotlin
+#                               ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
+#                                ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin
+#                                 ^^^^^^^^^^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin entity.name.type.class.kotlin
+#                                           ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
+#                                            ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin
+#                                             ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
+#                                              ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin
+#                                               ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
 >
 >    override fun mouseEntered(e: MouseEvent) { }
-#^^^^ source.kotlin meta.block.kotlin
-#    ^^^^^^^^ source.kotlin meta.block.kotlin storage.modifier.kotlin
-#            ^ source.kotlin meta.block.kotlin
-#             ^^^ source.kotlin meta.block.kotlin meta.function.kotlin keyword.other.kotlin
-#                ^ source.kotlin meta.block.kotlin meta.function.kotlin
-#                 ^^^^^^^^^^^^ source.kotlin meta.block.kotlin meta.function.kotlin entity.name.function.kotlin
-#                             ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
-#                              ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin variable.parameter.function.kotlin
-#                               ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
-#                                ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin
-#                                 ^^^^^^^^^^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin entity.name.type.class.kotlin
-#                                           ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
-#                                            ^ source.kotlin meta.block.kotlin meta.function.kotlin
-#                                             ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
-#                                              ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin
-#                                               ^ source.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
+#^^^^ source.kotlin meta.class.kotlin meta.block.kotlin
+#    ^^^^^^^^ source.kotlin meta.class.kotlin meta.block.kotlin storage.modifier.kotlin
+#            ^ source.kotlin meta.class.kotlin meta.block.kotlin
+#             ^^^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin keyword.other.kotlin
+#                ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin
+#                 ^^^^^^^^^^^^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin entity.name.function.kotlin
+#                             ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.begin.kotlin punctuation.definition.parameters.begin.kotlin
+#                              ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin variable.parameter.function.kotlin
+#                               ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin keyword.operator.declaration.kotlin
+#                                ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin
+#                                 ^^^^^^^^^^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin entity.name.type.class.kotlin
+#                                           ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.parameters.kotlin punctuation.section.group.end.kotlin punctuation.definition.parameters.end.kotlin
+#                                            ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin
+#                                             ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.begin.kotlin
+#                                              ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin
+#                                               ^ source.kotlin meta.class.kotlin meta.block.kotlin meta.function.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
 >}
-#^ source.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
+#^ source.kotlin meta.class.kotlin meta.block.kotlin punctuation.section.group.end.kotlin
 >
 >class Feature : Node("Title", "Content", "Description") {
 #^^^^^ source.kotlin meta.class.kotlin storage.modifier.kotlin

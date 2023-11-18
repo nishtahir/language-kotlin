@@ -164,3 +164,9 @@ class Feature : Node("Title", "Content", "Description") {
 class Outer {
     inner class Inner {}
 }
+
+sealed interface ProfileScreenState {
+    data class Success(val username: String) : ProfileScreenState
+    data object Error : ProfileScreenState
+    data object Loading : ProfileScreenState
+}

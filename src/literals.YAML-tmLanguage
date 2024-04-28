@@ -71,8 +71,6 @@ repository:
                             -
                                 include: '#string-content'
                 repository:
-                    # https://kotlinlang.org/docs/strings.html#raw-strings
-                    # Raw strings do not contain escape sequences.
                     raw-string-content:
                         patterns:
                             -

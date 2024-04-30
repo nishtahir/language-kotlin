@@ -13,6 +13,28 @@
   "bugs": {
     "url": "https://github.com/nishtahir/language-kotlin/issues"
   },
+  "contributes": {
+    "languages": [
+      {
+        "id": "kotlin",
+        "aliases": [
+            "Kotlin"
+        ],
+        "extensions": [
+          ".kt",
+          ".kts"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "kotlin",
+        "scopeName": "source.kotlin",
+        "path": "./dist/Kotlin.JSON-tmLanguage"
+      }
+    ]
+  },
   "scripts": {
     "build:snapshot": "npx vscode-tmgrammar-snap -u -g dist/Kotlin.tmLanguage -s source.kotlin \"snapshots/**/*.kt\"",
     "build:grammar": "node scripts/build.js",

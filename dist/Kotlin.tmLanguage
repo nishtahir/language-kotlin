@@ -9,19 +9,28 @@
         <key>patterns</key>
         <array>
           <dict>
-            <key>comment</key>
-            <string>Use-site annotation</string>
-            <key>match</key>
-            <string>@(?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*?[a-zA-Z_]\w*</string>
-            <key>name</key>
-            <string>meta.annotation.kotlin</string>
-          </dict>
-          <dict>
             <key>begin</key>
-            <string>@[a-zA-Z_]\w*\s*(\()</string>
+            <string>(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)(\()</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.annotation.kotlin</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.annotation.target.kotlin</string>
+                <key>comment</key>
+                <string>Use-Site Annotation Target</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.annotation.kotlin</string>
+              </dict>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>punctuation.definition.arguments.begin.kotlin</string>
@@ -55,7 +64,27 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>@[a-zA-Z_]\w*</string>
+            <string>(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.annotation.kotlin</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.annotation.target.kotlin</string>
+                <key>comment</key>
+                <string>Use-Site Annotation Target</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.annotation.kotlin</string>
+              </dict>
+            </dict>
             <key>name</key>
             <string>meta.annotation.kotlin</string>
           </dict>

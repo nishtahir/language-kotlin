@@ -2,13 +2,12 @@ repository:
     annotations:
         patterns:
             -
-                comment: 'Use-site annotation'
-                match: '@(?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*?[a-zA-Z_]\w*'
-                name: meta.annotation.kotlin
-            -
-                begin: '@[a-zA-Z_]\w*\s*(\()'
+                begin: '(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)(\()'
                 beginCaptures:
-                    '1': {name: punctuation.definition.arguments.begin.kotlin}
+                    '1': {name: keyword.control.annotation.kotlin}
+                    '2': {name: keyword.annotation.target.kotlin, comment: 'Use-Site Annotation Target'}
+                    '3': {name: storage.type.annotation.kotlin}
+                    '4': {name: punctuation.definition.arguments.begin.kotlin}
                 end: \)
                 endCaptures:
                     '0': {name: punctuation.definition.arguments.end.kotlin}
@@ -17,7 +16,11 @@ repository:
                     - {include: '#code'}
                     - {match: ',', name: punctuation.seperator.property.kotlin}
             -
-                match: '@[a-zA-Z_]\w*'
+                match: '(@)((?:file|property|field|get|set|receiver|param|setparam|delegate)\s*:\s*)?([a-zA-Z_]\w*)'
+                captures:
+                    '1': {name: keyword.control.annotation.kotlin}
+                    '2': {name: keyword.annotation.target.kotlin, comment: 'Use-Site Annotation Target'}
+                    '3': {name: storage.type.annotation.kotlin}
                 name: meta.annotation.kotlin
     class-literal:
         patterns:
